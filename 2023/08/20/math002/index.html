@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":true,"height":100},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="这里谈一个和上一题相似但是更简单的题目。  在一个边长为1的正方形上任意取两个点，那么这两个点的平均距离是多少？如果是半径为1的圆呢？ 这个计算更为简单，我们先谈论问题圆。  显然，任取两点的距离可以用函数\(f(\theta_1,\theta_2)\)表示。 其中点a和点b的坐标借助极坐标可以分别表示为 \[ \begin{aligned} &amp;a(rcos\theta_1,rsin\theta_">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tmp">
+<meta property="og:url" content="http://example.com/2023/08/20/math002/index.html">
+<meta property="og:site_name" content="ハウルの動く城">
+<meta property="og:description" content="这里谈一个和上一题相似但是更简单的题目。  在一个边长为1的正方形上任意取两个点，那么这两个点的平均距离是多少？如果是半径为1的圆呢？ 这个计算更为简单，我们先谈论问题圆。  显然，任取两点的距离可以用函数\(f(\theta_1,\theta_2)\)表示。 其中点a和点b的坐标借助极坐标可以分别表示为 \[ \begin{aligned} &amp;a(rcos\theta_1,rsin\theta_">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-08-20T03:14:15.000Z">
+<meta property="article:modified_time" content="2023-08-22T16:09:39.130Z">
+<meta property="article:author" content="yun">
+<meta property="article:tag" content="数学">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2023/08/20/math002/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/08/20/math002/","path":"2023/08/20/math002/","title":"tmp"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>tmp | ハウルの動く城</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">ハウルの動く城</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">ハウルの動く城</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">yun</p>
+  <div class="site-description" itemprop="description">ハウルの動く城は、魔法使いのハウルと呪いで老婆になった少女ソフィーの冒険と恋を描いたアニメーション映画です。ソフィーはハウルの動く城に住み込み、掃除婦として彼と仲良くなりますが、戦争や魔法使いのサリマンや荒地の魔女などの脅威に直面します。ソフィーはハウルの心臓を守るために奮闘し、自分も呪いから解放されます。最後にはハウルと愛を確かめ合い、新しい城で幸せに暮らします。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/20/math002/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="yun">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ハウルの動く城">
+      <meta itemprop="description" content="ハウルの動く城は、魔法使いのハウルと呪いで老婆になった少女ソフィーの冒険と恋を描いたアニメーション映画です。ソフィーはハウルの動く城に住み込み、掃除婦として彼と仲良くなりますが、戦争や魔法使いのサリマンや荒地の魔女などの脅威に直面します。ソフィーはハウルの心臓を守るために奮闘し、自分も呪いから解放されます。最後にはハウルと愛を確かめ合い、新しい城で幸せに暮らします。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="tmp | ハウルの動く城">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          tmp
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-08-20 11:14:15" itemprop="dateCreated datePublished" datetime="2023-08-20T11:14:15+08:00">2023-08-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-08-23 00:09:39" itemprop="dateModified" datetime="2023-08-23T00:09:39+08:00">2023-08-23</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>这里谈一个和上一题相似但是更简单的题目。</p>
+<p>在一个边长为1的正方形上任意取两个点，那么这两个点的平均距离是多少？如果是半径为1的圆呢？
+这个计算更为简单，我们先谈论问题圆。</p>
+显然，任取两点的距离可以用函数<span
+class="math inline">\(f(\theta_1,\theta_2)\)</span>表示。
+其中点a和点b的坐标借助极坐标可以分别表示为 <span class="math display">\[
+\begin{aligned}
+&amp;a(rcos\theta_1,rsin\theta_1)
+&amp;b(rcos\theta_2,rsin\theta_2)
+\end{aligned}
+\]</span> 其中r为1。 那么距离公式则为: <span class="math display">\[
+\begin{aligned}
+f(\theta_1,\theta_2)&amp;=
+\sqrt{(cos\theta_1-cos\theta_2)^2+(sin\theta_1-sin\theta_2)^2}\\
+&amp;=\sqrt{2-2cos\theta_1cos\theta_2-2sin\theta_1sin\theta_2}\\
+&amp;=\sqrt{2-2cos(\theta_1-\theta_2)}\\
+&amp;=\sqrt{2} \sqrt{1-cos(\theta_1-\theta_2)}\\
+&amp;=\sqrt{2}\sqrt{2sin^2\frac{\theta_1-\theta_2}{2}}\\
+&amp;=2 |sin\frac{\theta_1-\theta_2}{2}|
+\end{aligned}
+\]</span>
+OK，那么很显然，根据微积分的知识我们就有，平均距离，等于积分除以积分面积。也就是
+<span class="math display">\[
+\overline{f}(\theta_1,\theta_2)=\frac{\int_0^{2\pi} \int_0^{2\pi}{2
+|sin\frac{\theta_1-\theta_2}{2}|} d\theta_1d\theta_2}{2\pi*2\pi}
+\]</span>
+好的，那我们简简单单计算一下这个积分公式吧。对于这样一个二重积分，第一件事是观察积分区间。可以看到积分空间的形状
+<div data-align="center">
+<img src=math002\square.png width=50% />
+<center style="font-size:14px;color:#999;text-decoration:underline">
+积分空间
+</center>
+</div>
+注意到这是一个绝对值的积分，我们去一下绝对值会发现，这个积分区域是对称的，因此这个积分等于两倍的三角形区域的积分面积值。
+<div data-align="center">
+<img src=math002\int_area.png width=50% />
+<center style="font-size:14px;color:#999;text-decoration:underline">
+红色区域为待积分区间
+</center>
+</div>
+<p>那么接下来就是去掉绝对值，积分结果多一倍，然后就是一系列简单的操作了。</p>
+<p><span class="math display">\[
+\begin{align*}
+&amp;\int_0^{2\pi} \int_0^{2\pi}{2 |sin\frac{\theta_1-\theta_2}{2}|}
+d\theta_1d\theta_2\\
+&amp;=\int_0^{2\pi}
+d\theta_2\int_{\theta_2}^{1}{4sin\frac{\theta_1-\theta_2}{2}}
+d\theta_1\\
+&amp;=\int_0^{2\pi}{-8\left.{cos\frac{\theta_1-\theta_2}{2}}\right|_{2\pi}
+^{\theta_2}} d\theta_2\\
+&amp;=-8\int_0^{2\pi}{-1-cos{\frac{2\pi-\theta_2}{2}}} d\theta_2\\
+&amp;=16\pi+8\int_0^{2\pi}{cos{\frac{2\pi-\theta_2}{2}}}d\theta_2\\
+&amp;=16\pi
+\end{align*}
+\]</span> 因此，最后的结果为： <span class="math display">\[
+\frac{\int_0^{2\pi} \int_0^{2\pi}{2 |sin\frac{\theta_1-\theta_2}{2}|}
+d\theta_1d\theta_2}{2\pi*2\pi}=\frac{16\pi}{4\pi^2}=\frac{4}{\pi}
+\]</span></p>
+这里的话，我再补充一个用python模拟的结果。 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line">total_len = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> tqdm(<span class="built_in">range</span>(<span class="number">10000000</span>)):</span><br><span class="line">  thert1=random.uniform(<span class="number">0</span>, <span class="number">2</span> * math.pi)</span><br><span class="line">  thert2=random.uniform(<span class="number">0</span>, <span class="number">2</span> * math.pi)</span><br><span class="line">  a2 = [math.cos(thert1),math.sin(thert1)]</span><br><span class="line">  b2 = [math.cos(thert2),math.sin(thert2)]</span><br><span class="line">  dist = math.sqrt((a2[<span class="number">0</span>] - b2[<span class="number">0</span>])**<span class="number">2</span> + (a2[<span class="number">1</span>] - b2[<span class="number">1</span>])**<span class="number">2</span>)</span><br><span class="line">  total_len += dist</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n&quot;</span>,total_len / <span class="number">10000000</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="number">4</span>/math.pi)</span><br></pre></td></tr></table></figure> 结果是这样的
+<pre>
+<strong>1.2732001083259852</strong>
+<strong>1.2732395447351628</strong>
+</pre>
+<p>可以看到实际值和模拟出来的结果在小数点后四位都可以保持一致。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag"># 数学</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/08/18/leetcode1615/" rel="prev" title="leetcode1615">
+                  <i class="fa fa-angle-left"></i> leetcode1615
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/08/21/leetcode0459/" rel="next" title="leetcode0459">
+                  leetcode0459 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">yun</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>

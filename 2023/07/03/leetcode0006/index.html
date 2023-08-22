@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":true,"height":100},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Zigzag Conversion 问题描述 The string &quot;PAYPALISHIRING&quot; is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)  1 2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="leetcode0006">
+<meta property="og:url" content="http://example.com/2023/07/03/leetcode0006/index.html">
+<meta property="og:site_name" content="ハウルの動く城">
+<meta property="og:description" content="Zigzag Conversion 问题描述 The string &quot;PAYPALISHIRING&quot; is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)  1 2">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-07-03T12:14:16.000Z">
+<meta property="article:modified_time" content="2023-08-22T16:09:39.153Z">
+<meta property="article:author" content="yun">
+<meta property="article:tag" content="leetcode">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2023/07/03/leetcode0006/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/07/03/leetcode0006/","path":"2023/07/03/leetcode0006/","title":"leetcode0006"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>leetcode0006 | ハウルの動く城</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">ハウルの動く城</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">ハウルの動く城</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#zigzag-conversion"><span class="nav-number">1.</span> <span class="nav-text">Zigzag
+Conversion</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80"><span class="nav-number">1.2.</span> <span class="nav-text">解法一</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">yun</p>
+  <div class="site-description" itemprop="description">ハウルの動く城は、魔法使いのハウルと呪いで老婆になった少女ソフィーの冒険と恋を描いたアニメーション映画です。ソフィーはハウルの動く城に住み込み、掃除婦として彼と仲良くなりますが、戦争や魔法使いのサリマンや荒地の魔女などの脅威に直面します。ソフィーはハウルの心臓を守るために奮闘し、自分も呪いから解放されます。最後にはハウルと愛を確かめ合い、新しい城で幸せに暮らします。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/03/leetcode0006/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="yun">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ハウルの動く城">
+      <meta itemprop="description" content="ハウルの動く城は、魔法使いのハウルと呪いで老婆になった少女ソフィーの冒険と恋を描いたアニメーション映画です。ソフィーはハウルの動く城に住み込み、掃除婦として彼と仲良くなりますが、戦争や魔法使いのサリマンや荒地の魔女などの脅威に直面します。ソフィーはハウルの心臓を守るために奮闘し、自分も呪いから解放されます。最後にはハウルと愛を確かめ合い、新しい城で幸せに暮らします。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="leetcode0006 | ハウルの動く城">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          leetcode0006
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-07-03 20:14:16" itemprop="dateCreated datePublished" datetime="2023-07-03T20:14:16+08:00">2023-07-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-08-23 00:09:39" itemprop="dateModified" datetime="2023-08-23T00:09:39+08:00">2023-08-23</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="zigzag-conversion"><a
+target="_blank" rel="noopener" href="https://leetcode.com/problems/zigzag-conversion/">Zigzag
+Conversion</a></h1>
+<h2 id="问题描述">问题描述</h2>
+<p>The string <code>"PAYPALISHIRING"</code> is written in a zigzag
+pattern on a given number of rows like this: (you may want to display
+this pattern in a fixed font for better legibility)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">P   A   H   N</span><br><span class="line">A P L S I I G</span><br><span class="line">Y   I   R</span><br></pre></td></tr></table></figure>
+<p>And then read line by line: <code>"PAHNAPLSIIGYIR"</code></p>
+<p>Write the code that will take a string and make this conversion given
+a number of rows:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string convert(string s, int numRows);</span><br></pre></td></tr></table></figure>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = &#34;PAYPALISHIRING&#34;, numRows = 3
+<strong>Output:</strong> &#34;PAHNAPLSIIGYIR&#34;
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = &#34;PAYPALISHIRING&#34;, numRows = 4
+<strong>Output:</strong> &#34;PINALSIGYAHRPI&#34;
+<strong>Explanation:</strong>
+P     I    N
+A   L S  I G
+Y A   H R
+P     I
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> s = &#34;A&#34;, numRows = 1
+<strong>Output:</strong> &#34;A&#34;</pre>
+<p>又是很有意思的一道题目，题目的意思就是，把一个字符串，以<strong>N</strong>字的顺序竖着排布，然后从左往右读取。当然，听不懂没关系，解就完事了。</p>
+<h2 id="解法一">解法一</h2>
+<p>这个解法就是模拟它的排布要求，然后输出结果。具体过程为，先定义一个二维的空数组，我比较懒，就叫a吧。这里以<code>numRows=4</code>为例，<code>a=[[],[],[],[]]</code>，然后就开始用个循环，j递增，依次<code>a[j].append(s[i])</code>，注意到存在一个时刻，<code>j=4</code>，那么这个时候应该令<code>j=2</code>，并令<code>j</code>开始递减，然后存在一个时刻<code>j=-1</code>，这个时候再令<code>j=1</code>，同时<code>j</code>递增。
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">convert</span>(<span class="params">self, s: <span class="built_in">str</span>, numRows: <span class="built_in">int</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">        <span class="keyword">if</span> numRows==<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> s</span><br><span class="line">        a = [[] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(numRows)]</span><br><span class="line">        j=-<span class="number">1</span></span><br><span class="line">        way=<span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> s:</span><br><span class="line">            j=j+way</span><br><span class="line">            <span class="keyword">if</span> j==numRows:</span><br><span class="line">                way=-<span class="number">1</span></span><br><span class="line">                j=numRows-<span class="number">2</span></span><br><span class="line">            <span class="keyword">elif</span> j==-<span class="number">1</span>:</span><br><span class="line">                way=<span class="number">1</span></span><br><span class="line">                j=<span class="number">1</span></span><br><span class="line">            a[j].append(i)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;&#x27;</span>.join([item <span class="keyword">for</span> sublist <span class="keyword">in</span> a <span class="keyword">for</span> item <span class="keyword">in</span> sublist])</span><br></pre></td></tr></table></figure> 那么这就是我的解法</p>
+<p><strong>Runtime</strong> <figure class="highlight plaintext"><figcaption><span>ms</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Beats 73.08 % of users with Python3</span><br></pre></td></tr></table></figure> <strong>Memory</strong>
+<figure class="highlight plaintext"><figcaption><span>mb</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Beats 31.71 % of users with Python3</span><br></pre></td></tr></table></figure>
+看到结果的时候，占的内存比较大，我感觉其实原理差不多，内存比别人大，那就是我变量的选取问题了。
+## 解法二 这里挖个坑，感觉可以用纯数学的方式推导。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/leetcode/" rel="tag"># leetcode</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/07/03/leetcode0005/" rel="prev" title="leetcode0005">
+                  <i class="fa fa-angle-left"></i> leetcode0005
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/07/03/leetcode0007/" rel="next" title="leetcode0007">
+                  leetcode0007 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">yun</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":true,"height":100},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Longest Substring Without Repeating Characters 问题描述 Given a string s, find the length of thelongest substring without repeating characters.  Example 1:  Input: s &#x3D; &quot;abcabcbb&quot; Output: 3 Explanation:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="leetcode0003">
+<meta property="og:url" content="http://example.com/2023/07/02/leetcode0003/index.html">
+<meta property="og:site_name" content="ハウルの動く城">
+<meta property="og:description" content="Longest Substring Without Repeating Characters 问题描述 Given a string s, find the length of thelongest substring without repeating characters.  Example 1:  Input: s &#x3D; &quot;abcabcbb&quot; Output: 3 Explanation:">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-07-02T10:19:52.000Z">
+<meta property="article:modified_time" content="2023-08-22T16:07:04.125Z">
+<meta property="article:author" content="yun">
+<meta property="article:tag" content="leetcode">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2023/07/02/leetcode0003/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/07/02/leetcode0003/","path":"2023/07/02/leetcode0003/","title":"leetcode0003"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>leetcode0003 | ハウルの動く城</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">ハウルの動く城</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">ハウルの動く城</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#longest-substring-without-repeating-characters"><span class="nav-number">1.</span> <span class="nav-text">Longest
+Substring Without Repeating Characters</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3"><span class="nav-number">1.2.</span> <span class="nav-text">问题求解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%E6%9A%B4%E5%8A%9B%E8%A7%A3%E6%B3%95"><span class="nav-number">1.3.</span> <span class="nav-text">解法一：暴力解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%AE%97%E6%B3%95"><span class="nav-number">1.4.</span> <span class="nav-text">解法二：滑动窗口算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E5%8C%96%E5%90%8E%E7%9A%84%E8%A7%A3%E6%B3%95"><span class="nav-number">1.4.1.</span> <span class="nav-text">优化后的解法</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">yun</p>
+  <div class="site-description" itemprop="description">ハウルの動く城は、魔法使いのハウルと呪いで老婆になった少女ソフィーの冒険と恋を描いたアニメーション映画です。ソフィーはハウルの動く城に住み込み、掃除婦として彼と仲良くなりますが、戦争や魔法使いのサリマンや荒地の魔女などの脅威に直面します。ソフィーはハウルの心臓を守るために奮闘し、自分も呪いから解放されます。最後にはハウルと愛を確かめ合い、新しい城で幸せに暮らします。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/02/leetcode0003/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="yun">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ハウルの動く城">
+      <meta itemprop="description" content="ハウルの動く城は、魔法使いのハウルと呪いで老婆になった少女ソフィーの冒険と恋を描いたアニメーション映画です。ソフィーはハウルの動く城に住み込み、掃除婦として彼と仲良くなりますが、戦争や魔法使いのサリマンや荒地の魔女などの脅威に直面します。ソフィーはハウルの心臓を守るために奮闘し、自分も呪いから解放されます。最後にはハウルと愛を確かめ合い、新しい城で幸せに暮らします。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="leetcode0003 | ハウルの動く城">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          leetcode0003
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-07-02 18:19:52" itemprop="dateCreated datePublished" datetime="2023-07-02T18:19:52+08:00">2023-07-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-08-23 00:07:04" itemprop="dateModified" datetime="2023-08-23T00:07:04+08:00">2023-08-23</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="longest-substring-without-repeating-characters"><a
+target="_blank" rel="noopener" href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">Longest
+Substring Without Repeating Characters</a></h1>
+<h2 id="问题描述">问题描述</h2>
+<p>Given a string <code>s</code>, find the length of the
+<strong>longest</strong> <strong>substring</strong> without repeating
+characters.</p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "abcabcbb"
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> The answer is "abc", with the length of 3.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "bbbbb"
+<strong>Output:</strong> 1
+<strong>Explanation:</strong> The answer is "b", with the length of 1.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> s = "pwwkew"
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> The answer is "wke", with the length of 3.
+Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.</pre>
+<p>换而言之，就是给定一个字符串<strong>s</strong>，要求我们返回它的最长无重复连续的子字符串。</p>
+<h2 id="问题求解">问题求解</h2>
+<p>这题第一下想的是把字符串改成数组，第一次出现就为0，并且把这个数标记，这样就可以把不同的字符变成相同的数字，再统计最长的连续0的长度即可。例如，<code>s="abcabcbb"</code>就可以变成<code>nums=[0, 0, 0, 1, 1, 1, 1, 1]</code>。但是这样有一个问题<code>s="pwwkew"</code>就会变成<code>nums=[0, 0, 1, 0, 0, 1]</code>，这么看来是2了，但是答案是3。究其原因是有些字符不是第一次出现的，它就是出现过了后面也是可以的，因此这种办法太粗糙了。下面是刚才说的错误解法。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a=[]</span><br><span class="line">nums=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> s:</span><br><span class="line">	<span class="keyword">if</span> i <span class="keyword">not</span> <span class="keyword">in</span> a:</span><br><span class="line">		a.append(i)</span><br><span class="line">		nums.append(<span class="number">0</span>)</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		nums.append(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="解法一暴力解法">解法一：暴力解法</h2>
+<p>这个方法没啥好说的，暴力就完事了。两层循环，第一层是子字符串的开头，第二层是子字符串的结尾。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">lengthOfLongestSubstring</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        a = <span class="built_in">set</span>()</span><br><span class="line">        out = <span class="number">0</span></span><br><span class="line">        j = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(s)):</span><br><span class="line">            <span class="keyword">if</span> i != <span class="number">0</span>:</span><br><span class="line">                a.remove(s[i-<span class="number">1</span>])</span><br><span class="line">            <span class="keyword">while</span> j &lt; <span class="built_in">len</span>(s) <span class="keyword">and</span> s[j] <span class="keyword">not</span> <span class="keyword">in</span> a:</span><br><span class="line">                a.add(s[j])</span><br><span class="line">                j += <span class="number">1</span></span><br><span class="line">            out = <span class="built_in">max</span>(out, j-i)</span><br><span class="line">        <span class="keyword">return</span> out</span><br></pre></td></tr></table></figure>
+<h2 id="解法二滑动窗口算法">解法二：滑动窗口算法</h2>
+<p>这个方法是我去问chatGPT，不管是GPT3.5还是GPT4.0，都要和我说的。我先自己大彻大悟一下。</p>
+<blockquote>
+<p>在解决最长不重复子串问题时，我们可以使用可变大小的滑动窗口。我们维护一个窗口，该窗口在字符串中滑动，同时跟踪窗口中的字符。当遇到重复字符时，我们将窗口的左边界向右移动，直到没有重复字符为止。这样，我们就可以在遍历整个字符串的同时找到最长的不重复子串。</p>
+</blockquote>
+<p>那么试着来写一下吧。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">lengthOfLongestSubstring</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        begin=<span class="number">0</span></span><br><span class="line">        end=<span class="number">1</span></span><br><span class="line">        out=<span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> end &lt;= <span class="built_in">len</span>(s):</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(s[begin:end])==<span class="built_in">len</span>(<span class="built_in">set</span>(s[begin:end])):</span><br><span class="line">                end=end+<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span> :</span><br><span class="line">                out=<span class="built_in">max</span>(out,<span class="built_in">len</span>(s[begin:end])-<span class="number">1</span>)</span><br><span class="line">                begin=begin+<span class="number">1</span></span><br><span class="line">        out=<span class="built_in">max</span>(out,<span class="built_in">len</span>(s[begin:end]))</span><br><span class="line">        <span class="keyword">return</span> (out)</span><br></pre></td></tr></table></figure>
+<p>我本来很高兴，终于好了，而且用的也是滑动窗口算法。但是时间复杂度太高了，究其原因<code>s[begin:end]</code>切片操作和集合操作过于耗时。其实改用新的办法来统计是否出现的操作。</p>
+<h3 id="优化后的解法">优化后的解法</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">lengthOfLongestSubstring</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        char_dict = &#123;&#125;</span><br><span class="line">        start = max_length = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i, c <span class="keyword">in</span> <span class="built_in">enumerate</span>(s):</span><br><span class="line">            <span class="keyword">if</span> c <span class="keyword">in</span> char_dict <span class="keyword">and</span> start &lt;= char_dict[c]:</span><br><span class="line">                start = char_dict[c] + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                max_length = <span class="built_in">max</span>(max_length, i-start+<span class="number">1</span>)</span><br><span class="line">            char_dict[c] = i</span><br><span class="line">        <span class="keyword">return</span> max_length</span><br></pre></td></tr></table></figure>
+<p>时间复杂度仅为<span
+class="math inline">\(O\text(n)\)</span>，可牛气死我了，插会腰。😎</p>
+<hr />
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/leetcode/" rel="tag"># leetcode</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/07/01/leetcode0001/" rel="prev" title="leetcode0001">
+                  <i class="fa fa-angle-left"></i> leetcode0001
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/07/02/leetcode0004/" rel="next" title="leetcode0004">
+                  leetcode0004 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">yun</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
