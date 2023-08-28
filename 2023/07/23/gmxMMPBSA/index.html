@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"yun-iota.vercel.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":true,"height":100},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="研究方法介绍 1 量子化学 1.1密度泛函理论 薛定谔方程（Schrödinger equation）是量子力学中用于描述体系的量子态随时间变化的一个偏微分方程。 其中，最广义形式含时">
+    <meta name="description" content="研究方法介绍 1 量子化学 1.1密度泛函理论 薛定谔方程（Schrödinger equation）是量子力学中用于描述体系的量子态随时间变化的一个偏微分方程。 其中，最广义形式含时的薛定谔方程如所示。 \[ \hat{H} \Psi&#x3D;i \hbar \frac{\partial}{\partial t} \Psi \] 其中，\(\">
 <meta property="og:type" content="article">
 <meta property="og:title" content="gmxMMPBSA">
 <meta property="og:url" content="https://yun-iota.vercel.app/2023/07/23/gmxMMPBSA/index.html">
 <meta property="og:site_name" content="ハウルの動く城">
-<meta property="og:description" content="研究方法介绍 1 量子化学 1.1密度泛函理论 薛定谔方程（Schrödinger equation）是量子力学中用于描述体系的量子态随时间变化的一个偏微分方程。 其中，最广义形式含时">
+<meta property="og:description" content="研究方法介绍 1 量子化学 1.1密度泛函理论 薛定谔方程（Schrödinger equation）是量子力学中用于描述体系的量子态随时间变化的一个偏微分方程。 其中，最广义形式含时的薛定谔方程如所示。 \[ \hat{H} \Psi&#x3D;i \hbar \frac{\partial}{\partial t} \Psi \] 其中，\(\">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://pubs.acs.org/cms/10.1021/acs.jctc.1c00645/asset/images/large/ct1c00645_0001.jpeg">
 <meta property="og:image" content="https://pubs.acs.org/cms/10.1021/acs.jctc.1c00645/asset/images/large/ct1c00645_0002.jpeg">
@@ -116,7 +116,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">研究方法介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E9%87%8F%E5%AD%90%E5%8C%96%E5%AD%A6"><span class="nav-number">1.1.</span> <span class="nav-text">1 量子化学</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E5%AF%86%E5%BA%A6%E6%B3%9B%E5%87%BD%E7%90%86%E8%AE%BA"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1密度泛函理论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E8%BF%87%E6%B8%A1%E6%80%81%E7%90%86%E8%AE%BA"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2过渡态理论</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%88%86%E5%AD%90%E5%AF%B9%E6%8E%A5"><span class="nav-number">1.2.</span> <span class="nav-text">2 分子对接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%88%86%E5%AD%90%E5%8A%A8%E5%8A%9B%E5%AD%A6"><span class="nav-number">1.3.</span> <span class="nav-text">3 分子动力学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-gmxMMPBSA"><span class="nav-number">1.4.</span> <span class="nav-text">4 gmxMMPBSA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%90%86%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.5.</span> <span class="nav-text">原理介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MM-PB-GB-SA%E6%96%B9%E6%B3%95"><span class="nav-number">1.5.0.1.</span> <span class="nav-text">MM&#x2F;PB(GB)SA方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gmx-MMPBSA%E7%9A%84%E4%B8%80%E8%88%AC%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-number">1.5.0.2.</span> <span class="nav-text">gmx_MMPBSA的一般工作流程</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%93%E6%9E%9C%E8%AE%A8%E8%AE%BA"><span class="nav-number">2.</span> <span class="nav-text">结果讨论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1"><span class="nav-number">2.1.</span> <span class="nav-text">1</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">研究方法介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8F%E5%AD%90%E5%8C%96%E5%AD%A6"><span class="nav-number">1.1.</span> <span class="nav-text">1 量子化学</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%86%E5%BA%A6%E6%B3%9B%E5%87%BD%E7%90%86%E8%AE%BA"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1密度泛函理论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%87%E6%B8%A1%E6%80%81%E7%90%86%E8%AE%BA"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2过渡态理论</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%AD%90%E5%AF%B9%E6%8E%A5"><span class="nav-number">1.2.</span> <span class="nav-text">2 分子对接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gmxmmpbsa"><span class="nav-number">1.3.</span> <span class="nav-text">4 gmxMMPBSA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%90%86%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.4.</span> <span class="nav-text">原理介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#mmpbgbsa%E6%96%B9%E6%B3%95"><span class="nav-number">1.4.0.1.</span> <span class="nav-text">MM&#x2F;PB(GB)SA方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gmx_mmpbsa%E7%9A%84%E4%B8%80%E8%88%AC%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-number">1.4.0.2.</span> <span class="nav-text">gmx_MMPBSA的一般工作流程</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%93%E6%9E%9C%E8%AE%A8%E8%AE%BA"><span class="nav-number">2.</span> <span class="nav-text">结果讨论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#section"><span class="nav-number">2.1.</span> <span class="nav-text">1</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -217,56 +217,57 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="研究方法介绍"><a class="header-anchor" href="#研究方法介绍"></a>研究方法介绍</h1>
-<h2 id="1-量子化学"><a class="header-anchor" href="#1-量子化学"></a>1 量子化学</h2>
-<h3 id="1-1密度泛函理论"><a class="header-anchor" href="#1-1密度泛函理论"></a>1.1密度泛函理论</h3>
-<p>薛定谔方程（Schrödinger equation）是量子力学中用于描述体系的量子态随时间变化的一个偏微分方程。<br>
-其中，最广义形式含时的薛定谔方程如所示。<br>
-$$<br>
-\hat{H} \Psi=i \hbar \frac{\partial}{\partial t} \Psi<br>
-$$<br>
-其中，$\hat{H}$是表征波函数总能量的哈密顿算符，$\Psi$是物理系统的波函数，$i$是虚数单位，$\hbar$是约化普朗克常数，$\frac{\partial}{\partial t}$是对于时间的偏微分。</p>
-<h3 id="1-2过渡态理论"><a class="header-anchor" href="#1-2过渡态理论"></a>1.2过渡态理论</h3>
-<h2 id="2-分子对接"><a class="header-anchor" href="#2-分子对接"></a>2 分子对接</h2>
-<p>分子对接(molecular docking）是指受体和配体之间通过能量匹配、空间匹配和化学性质匹配而相互识别形成分子复合物，并预测复合物结构的一种计算技术。</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="研究方法介绍">研究方法介绍</h1>
+<h2 id="量子化学">1 量子化学</h2>
+<h3 id="密度泛函理论">1.1密度泛函理论</h3>
+<p>薛定谔方程（Schrödinger
+equation）是量子力学中用于描述体系的量子态随时间变化的一个偏微分方程。
+其中，最广义形式含时的薛定谔方程如所示。 <span class="math display">\[
+\hat{H} \Psi=i \hbar \frac{\partial}{\partial t} \Psi
+\]</span> 其中，<span class="math inline">\(\hat{H}\)</span>是表征波函数总能量的哈密顿算符，<span class="math inline">\(\Psi\)</span>是物理系统的波函数，<span class="math inline">\(i\)</span>是虚数单位，<span class="math inline">\(\hbar\)</span>是约化普朗克常数，<span class="math inline">\(\frac{\partial}{\partial
+t}\)</span>是对于时间的偏微分。</p>
+<h3 id="过渡态理论">1.2过渡态理论</h3>
+<h2 id="分子对接">2 分子对接</h2>
+<p>分子对接(molecular
+docking）是指受体和配体之间通过能量匹配、空间匹配和化学性质匹配而相互识别形成分子复合物，并预测复合物结构的一种计算技术。</p>
 <p>根据配体与受体在对接过程中结构是否发生变化可以大致分为以下三类：（1）刚性对接；（2）半柔性对接；（3）柔性对接。</p>
 <p>刚性对接过程中，配体和受体的三维结构都不发生变化，只有相对位置的改变。刚性对接操作简单，计算速度快，但是精度较低。<br>
 半柔性对接是在对接过程中，受体结构固定不变，配体可以进行一定程度的扭转。半柔性对接兼具了计算机精度和计算速度，是目前使用最多的对接类型。<br>
-柔性对接过程，受体和配体都可以进行一定程度的改变，具有精度高的优点，但是计算成本大，耗时长，一般用于高精细的相互作用研究。<br>
-分子对接的软件有Autodock、AutoDOCK Vina、Glide和UCSF DOCK等。<br>
-在本文中，我们采用半柔性对接方法，通过qvina软件，研究蛋白质ACE2受体与烯二炔的相互作用。</p>
-<h2 id="3-分子动力学"><a class="header-anchor" href="#3-分子动力学"></a>3 分子动力学</h2>
-<p>分子动力学是一门结合物理，数学和化学的综合技术。分子动力学是一套分子模拟方法，该方法主要是依靠牛顿力学来模拟分子体系的运动，以在由分子体系的不同状态构成的系综中抽取样本，从而计算体系的构型积分，并以构型积分的结果为基础进一步计算体系的热力学量和其他宏观性质。</p>
-<h2 id="4-gmxMMPBSA"><a class="header-anchor" href="#4-gmxMMPBSA"></a>4 gmxMMPBSA</h2>
-<h2 id="原理介绍"><a class="header-anchor" href="#原理介绍"></a>原理介绍</h2>
-<img decoding="async" src="https://pubs.acs.org/cms/10.1021/acs.jctc.1c00645/asset/images/large/ct1c00645_0001.jpeg" width="80%">
-<h4 id="MM-PB-GB-SA方法"><a class="header-anchor" href="#MM-PB-GB-SA方法"></a>MM/PB(GB)SA方法</h4>
+柔性对接过程，受体和配体都可以进行一定程度的改变，具有精度高的优点，但是计算成本大，耗时长，一般用于高精细的相互作用研究。
+分子对接的软件有Autodock、AutoDOCK Vina、Glide和UCSF DOCK等。
+在本文中，我们采用半柔性对接方法，通过qvina软件，研究蛋白质ACE2受体与烯二炔的相互作用。
+## 3 分子动力学
+分子动力学是一门结合物理，数学和化学的综合技术。分子动力学是一套分子模拟方法，该方法主要是依靠牛顿力学来模拟分子体系的运动，以在由分子体系的不同状态构成的系综中抽取样本，从而计算体系的构型积分，并以构型积分的结果为基础进一步计算体系的热力学量和其他宏观性质。</p>
+<h2 id="gmxmmpbsa">4 gmxMMPBSA</h2>
+<h2 id="原理介绍">原理介绍</h2>
+<p><img decoding="async" src="https://pubs.acs.org/cms/10.1021/acs.jctc.1c00645/asset/images/large/ct1c00645_0001.jpeg" width="80%"></p>
+<h4 id="mmpbgbsa方法">MM/PB(GB)SA方法</h4>
 <p>计算结合自由能的方法有很多，例如，热力学积分，自由能微扰、MM/PB(GB)SA等方法。</p>
 <table>
 <thead>
-<tr>
-<th style="text-align:left">左对齐</th>
-<th style="text-align:right">右对齐</th>
-<th style="text-align:center">居中对齐</th>
+<tr class="header">
+<th style="text-align: left;">左对齐</th>
+<th style="text-align: right;">右对齐</th>
+<th style="text-align: center;">居中对齐</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left">单元格</td>
-<td style="text-align:right">单元格</td>
-<td style="text-align:center">单元格</td>
+<tr class="odd">
+<td style="text-align: left;">单元格</td>
+<td style="text-align: right;">单元格</td>
+<td style="text-align: center;">单元格</td>
 </tr>
-<tr>
-<td style="text-align:left">单元格</td>
-<td style="text-align:right">单元格</td>
-<td style="text-align:center">单元格</td>
+<tr class="even">
+<td style="text-align: left;">单元格</td>
+<td style="text-align: right;">单元格</td>
+<td style="text-align: center;">单元格</td>
 </tr>
 </tbody>
 </table>
-<img decoding="auto" src="https://pubs.acs.org/cms/10.1021/acs.jctc.1c00645/asset/images/large/ct1c00645_0002.jpeg" width="80%">
-<h4 id="gmx-MMPBSA的一般工作流程"><a class="header-anchor" href="#gmx-MMPBSA的一般工作流程"></a>gmx_MMPBSA的一般工作流程</h4>
-<h1 id="结果讨论"><a class="header-anchor" href="#结果讨论"></a>结果讨论</h1>
-<h2 id="1"><a class="header-anchor" href="#1"></a>1</h2>
+<p><img decoding="auto" src="https://pubs.acs.org/cms/10.1021/acs.jctc.1c00645/asset/images/large/ct1c00645_0002.jpeg" width="80%"></p>
+<h4 id="gmx_mmpbsa的一般工作流程">gmx_MMPBSA的一般工作流程</h4>
+<h1 id="结果讨论">结果讨论</h1>
+<h2 id="section">1</h2>
 
     </div>
 
@@ -367,7 +368,7 @@ $$<br>
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 

@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"yun-iota.vercel.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":true,"height":100},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="这里讲一个很有意思的问题，这个问题是我在逛知乎的时候偶然看到的。题目的内容如下图，它给人一种人畜无害的错觉，第一眼可能觉得很简单，细想就发现了不对劲。    这是一个很有意思的题目，因为它给人一种人畜无害的错觉，第一眼可能觉得很简单，细想就发现了不对劲。 这里首先给出一种数值解法，或者说python模拟的。">
+    <meta name="description" content="这里讲一个很有意思的问题，这个问题是我在逛知乎的时候偶然看到的。题目的内容如下图，它给人一种人畜无害的错觉，第一眼可能觉得很简单，细想就发现了不对劲。    这是一个很有意思的题目，因为它给人一种人畜无害的错觉，第一眼可能觉得很简单，细想就发现了不对劲。 这里首先给出一种数值解法，或者说python模拟的。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数学杂谈001">
 <meta property="og:url" content="https://yun-iota.vercel.app/2023/07/29/math001/index.html">
 <meta property="og:site_name" content="ハウルの動く城">
-<meta property="og:description" content="这里讲一个很有意思的问题，这个问题是我在逛知乎的时候偶然看到的。题目的内容如下图，它给人一种人畜无害的错觉，第一眼可能觉得很简单，细想就发现了不对劲。    这是一个很有意思的题目，因为它给人一种人畜无害的错觉，第一眼可能觉得很简单，细想就发现了不对劲。 这里首先给出一种数值解法，或者说python模拟的。">
+<meta property="og:description" content="这里讲一个很有意思的问题，这个问题是我在逛知乎的时候偶然看到的。题目的内容如下图，它给人一种人畜无害的错觉，第一眼可能觉得很简单，细想就发现了不对劲。    这是一个很有意思的题目，因为它给人一种人畜无害的错觉，第一眼可能觉得很简单，细想就发现了不对劲。 这里首先给出一种数值解法，或者说python模拟的。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://yun-iota.vercel.app/2023/07/29/math001/math001.jpg">
 <meta property="article:published_time" content="2023-07-29T11:56:13.000Z">
@@ -217,19 +217,18 @@
     
     
     <div class="post-body" itemprop="articleBody"><p>这里讲一个很有意思的问题，这个问题是我在逛知乎的时候偶然看到的。题目的内容如下图，它给人一种人畜无害的错觉，第一眼可能觉得很简单，细想就发现了不对劲。</p>
-<div align="center">
-<img src="/2023/07/29/math001/math001.jpg" width="60%">
+<div data-align="center">
+<p><img src="/2023/07/29/math001/math001.jpg" width="60%"></p>
 </div>
 <p>这是一个很有意思的题目，因为它给人一种人畜无害的错觉，第一眼可能觉得很简单，细想就发现了不对劲。</p>
-<p>这里首先给出一种数值解法，或者说python模拟的。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line">tol_dis=<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> tqdm(<span class="built_in">range</span>(<span class="number">100000</span>)):</span><br><span class="line">  a=[random.random(),random.random()]</span><br><span class="line">  b=[random.random(),random.random()]</span><br><span class="line">  dis=math.sqrt((a2[<span class="number">0</span>]-b2[<span class="number">0</span>])**<span class="number">2</span>+(a2[<span class="number">1</span>]-b2[<span class="number">1</span>])**<span class="number">2</span>)</span><br><span class="line">  tol_dis=tol_dis+dis</span><br><span class="line"><span class="built_in">print</span>(tol_dis/<span class="number">100000</span>)</span><br></pre></td></tr></table></figure>
-<p>我这里得到的结果是0.5217857863240527。这个答案在工程学上是对的，可惜我们讨论的是数学题。</p>
-<p>我们还是看看正规的数学解法吧。<br>
-这题的答案其实是可以一下子就写出来的<br>
-$$<br>
-\int_0^1 \int_0^1 \int_0^1 \int_0<sup>1\left(\sqrt{(x_1-x_2)</sup>2}+\sqrt{(y_1-y_2)^2}\right) d x_1 d x_2 dy_1 dy_2<br>
-$$<br>
-可以看到$x_1$，$x_2$，$y_1$，$y_2$都是服从0到1的均匀分布。那么，只要解一下这个四重积分，答案就出来啦。</p>
+<p>这里首先给出一种数值解法，或者说python模拟的。 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line">tol_dis=<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> tqdm(<span class="built_in">range</span>(<span class="number">100000</span>)):</span><br><span class="line">  a=[random.random(),random.random()]</span><br><span class="line">  b=[random.random(),random.random()]</span><br><span class="line">  dis=math.sqrt((a2[<span class="number">0</span>]-b2[<span class="number">0</span>])**<span class="number">2</span>+(a2[<span class="number">1</span>]-b2[<span class="number">1</span>])**<span class="number">2</span>)</span><br><span class="line">  tol_dis=tol_dis+dis</span><br><span class="line"><span class="built_in">print</span>(tol_dis/<span class="number">100000</span>)</span><br></pre></td></tr></table></figure>
+我这里得到的结果是0.5217857863240527。这个答案在工程学上是对的，可惜我们讨论的是数学题。</p>
+<p>我们还是看看正规的数学解法吧。 这题的答案其实是可以一下子就写出来的
+<span class="math display">\[
+\int_0^1 \int_0^1 \int_0^1
+\int_0^1\left(\sqrt{(x_1-x_2)^2}+\sqrt{(y_1-y_2)^2}\right) d x_1 d x_2
+dy_1 dy_2
+\]</span> 可以看到<span class="math inline">\(x_1\)</span>，<span class="math inline">\(x_2\)</span>，<span class="math inline">\(y_1\)</span>，<span class="math inline">\(y_2\)</span>都是服从0到1的均匀分布。那么，只要解一下这个四重积分，答案就出来啦。</p>
 
     </div>
 
@@ -331,7 +330,7 @@ $$<br>
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 

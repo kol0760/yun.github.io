@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"yun-iota.vercel.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":true,"height":100},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Palindrome Number 问题描述 Given an integer x, return true if">
+    <meta name="description" content="Palindrome Number 问题描述 Given an integer x, return true if x is palindrome , and false otherwis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="leetcode0009">
 <meta property="og:url" content="https://yun-iota.vercel.app/2023/07/04/leetcode0009/index.html">
 <meta property="og:site_name" content="ハウルの動く城">
-<meta property="og:description" content="Palindrome Number 问题描述 Given an integer x, return true if">
+<meta property="og:description" content="Palindrome Number 问题描述 Given an integer x, return true if x is palindrome , and false otherwis">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-07-04T10:01:22.000Z">
 <meta property="article:modified_time" content="2023-08-25T03:20:09.738Z">
@@ -114,7 +114,8 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Palindrome-Number"><span class="nav-number">1.</span> <span class="nav-text">Palindrome Number</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80"><span class="nav-number">1.2.</span> <span class="nav-text">解法一</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#palindrome-number"><span class="nav-number">1.</span> <span class="nav-text">Palindrome
+Number</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80"><span class="nav-number">1.2.</span> <span class="nav-text">解法一</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -215,9 +216,12 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="Palindrome-Number"><a class="header-anchor" href="#Palindrome-Number"></a><a target="_blank" rel="noopener" href="https://leetcode.com/problems/palindrome-number/">Palindrome Number</a></h1>
-<h2 id="问题描述"><a class="header-anchor" href="#问题描述"></a>问题描述</h2>
-<p>Given an integer <code>x</code>, return <code>true</code> if <code>x</code> is <strong>palindrome</strong> , and <em><code>false</code></em> <em>otherwise</em> .</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="palindrome-number"><a target="_blank" rel="noopener" href="https://leetcode.com/problems/palindrome-number/">Palindrome
+Number</a></h1>
+<h2 id="问题描述">问题描述</h2>
+<p>Given an integer <code>x</code>, return <code>true</code> if
+<code>x</code> is <strong>palindrome</strong> , and
+<em><code>false</code></em> <em>otherwise</em> .</p>
 <p><strong>Example 1:</strong></p>
 <pre><strong>Input:</strong> x = 121
 <strong>Output:</strong> true
@@ -232,20 +236,18 @@
 <pre><strong>Input:</strong> x = 10
 <strong>Output:</strong> false
 <strong>Explanation:</strong> Reads 01 from right to left. Therefore it is not a palindrome.</pre>
-<p>判断一个数字是否是回文数字。这个题目，感觉会做 <a target="_blank" rel="noopener" href="https://leetcode.com/problems/longest-palindromic-substring/">Longest Palindromic Substring</a> 的人就已经会做这题了。</p>
-<h2 id="解法一"><a class="header-anchor" href="#解法一"></a>解法一</h2>
+<p>判断一个数字是否是回文数字。这个题目，感觉会做 <a target="_blank" rel="noopener" href="https://leetcode.com/problems/longest-palindromic-substring/">Longest
+Palindromic Substring</a> 的人就已经会做这题了。</p>
+<h2 id="解法一">解法一</h2>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isPalindrome</span>(<span class="params">self, x: <span class="built_in">int</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        nums=<span class="built_in">list</span>(<span class="built_in">str</span>(x))</span><br><span class="line">        nums2=nums[-<span class="number">1</span>::-<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            <span class="keyword">if</span> nums[i]!=nums2[i]:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
-<p>一开始写的代码，充斥着幼稚啊。这里提两个点。</p>
-<blockquote>
-<p>第一，反转列表nums2其实没有必要。</p>
-</blockquote>
+<p>一开始写的代码，充斥着幼稚啊。这里提两个点。
+&gt;第一，反转列表nums2其实没有必要。</p>
 <blockquote>
 <p>第二，循环次数过多了，其实循环一半就够了。</p>
 </blockquote>
-<p>那就在刚才说的基础上改一下吧。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isPalindrome</span>(<span class="params">self, x: <span class="built_in">int</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        nums = <span class="built_in">list</span>(<span class="built_in">str</span>(x))</span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n // <span class="number">2</span>):</span><br><span class="line">            <span class="keyword">if</span> nums[i] != nums[n - i - <span class="number">1</span>]:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
-<p>这里，我们还可以借助leetcode0007的工具</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isPalindrome</span>(<span class="params">self, x: <span class="built_in">int</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">if</span> x &lt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">reverse</span>(<span class="params">x: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">            mxStr =  <span class="string">&#x27;2147483647&#x27;</span></span><br><span class="line">            ansLst = <span class="built_in">reversed</span>(<span class="built_in">str</span>(<span class="built_in">abs</span>(x)))</span><br><span class="line">            ansStr = <span class="string">&#x27;&#x27;</span>.join(ansLst).rjust(<span class="number">10</span>,<span class="string">&#x27;0&#x27;</span>)</span><br><span class="line">            <span class="keyword">if</span> ansStr &gt; mxStr: <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">int</span>(ansStr)*(<span class="number">1</span> - <span class="number">2</span>*(x &lt; <span class="number">0</span>)) </span><br><span class="line">        <span class="keyword">return</span> x==reverse(x)</span><br></pre></td></tr></table></figure>
+<p>那就在刚才说的基础上改一下吧。 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isPalindrome</span>(<span class="params">self, x: <span class="built_in">int</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        nums = <span class="built_in">list</span>(<span class="built_in">str</span>(x))</span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n // <span class="number">2</span>):</span><br><span class="line">            <span class="keyword">if</span> nums[i] != nums[n - i - <span class="number">1</span>]:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure></p>
+<p>这里，我们还可以借助leetcode0007的工具 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isPalindrome</span>(<span class="params">self, x: <span class="built_in">int</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">if</span> x &lt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">reverse</span>(<span class="params">x: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">            mxStr =  <span class="string">&#x27;2147483647&#x27;</span></span><br><span class="line">            ansLst = <span class="built_in">reversed</span>(<span class="built_in">str</span>(<span class="built_in">abs</span>(x)))</span><br><span class="line">            ansStr = <span class="string">&#x27;&#x27;</span>.join(ansLst).rjust(<span class="number">10</span>,<span class="string">&#x27;0&#x27;</span>)</span><br><span class="line">            <span class="keyword">if</span> ansStr &gt; mxStr: <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">int</span>(ansStr)*(<span class="number">1</span> - <span class="number">2</span>*(x &lt; <span class="number">0</span>)) </span><br><span class="line">        <span class="keyword">return</span> x==reverse(x)</span><br></pre></td></tr></table></figure></p>
+
     </div>
 
     
@@ -346,7 +348,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 

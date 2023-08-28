@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"yun-iota.vercel.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":true,"height":100},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Zigzag Conversion 问题描述 The string &quot;PAYPALISHIRING&quot; is written i">
+    <meta name="description" content="Zigzag Conversion 问题描述 The string &quot;PAYPALISHIRING&quot; is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fix">
 <meta property="og:type" content="article">
 <meta property="og:title" content="leetcode0006">
 <meta property="og:url" content="https://yun-iota.vercel.app/2023/07/03/leetcode0006/index.html">
 <meta property="og:site_name" content="ハウルの動く城">
-<meta property="og:description" content="Zigzag Conversion 问题描述 The string &quot;PAYPALISHIRING&quot; is written i">
+<meta property="og:description" content="Zigzag Conversion 问题描述 The string &quot;PAYPALISHIRING&quot; is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fix">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-07-03T12:14:16.000Z">
 <meta property="article:modified_time" content="2023-08-25T03:20:09.741Z">
@@ -114,7 +114,8 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Zigzag-Conversion"><span class="nav-number">1.</span> <span class="nav-text">Zigzag Conversion</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80"><span class="nav-number">1.2.</span> <span class="nav-text">解法一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C"><span class="nav-number">1.3.</span> <span class="nav-text">解法二</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#zigzag-conversion"><span class="nav-number">1.</span> <span class="nav-text">Zigzag
+Conversion</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80"><span class="nav-number">1.2.</span> <span class="nav-text">解法一</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -215,12 +216,16 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="Zigzag-Conversion"><a class="header-anchor" href="#Zigzag-Conversion"></a><a target="_blank" rel="noopener" href="https://leetcode.com/problems/zigzag-conversion/">Zigzag Conversion</a></h1>
-<h2 id="问题描述"><a class="header-anchor" href="#问题描述"></a>问题描述</h2>
-<p>The string <code>&quot;PAYPALISHIRING&quot;</code> is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="zigzag-conversion"><a target="_blank" rel="noopener" href="https://leetcode.com/problems/zigzag-conversion/">Zigzag
+Conversion</a></h1>
+<h2 id="问题描述">问题描述</h2>
+<p>The string <code>"PAYPALISHIRING"</code> is written in a zigzag
+pattern on a given number of rows like this: (you may want to display
+this pattern in a fixed font for better legibility)</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">P   A   H   N</span><br><span class="line">A P L S I I G</span><br><span class="line">Y   I   R</span><br></pre></td></tr></table></figure>
-<p>And then read line by line: <code>&quot;PAHNAPLSIIGYIR&quot;</code></p>
-<p>Write the code that will take a string and make this conversion given a number of rows:</p>
+<p>And then read line by line: <code>"PAHNAPLSIIGYIR"</code></p>
+<p>Write the code that will take a string and make this conversion given
+a number of rows:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string convert(string s, int numRows);</span><br></pre></td></tr></table></figure>
 <p><strong>Example 1:</strong></p>
 <pre><strong>Input:</strong> s = &#34;PAYPALISHIRING&#34;, numRows = 3
@@ -239,17 +244,13 @@ P     I
 <pre><strong>Input:</strong> s = &#34;A&#34;, numRows = 1
 <strong>Output:</strong> &#34;A&#34;</pre>
 <p>又是很有意思的一道题目，题目的意思就是，把一个字符串，以<strong>N</strong>字的顺序竖着排布，然后从左往右读取。当然，听不懂没关系，解就完事了。</p>
-<h2 id="解法一"><a class="header-anchor" href="#解法一"></a>解法一</h2>
-<p>这个解法就是模拟它的排布要求，然后输出结果。具体过程为，先定义一个二维的空数组，我比较懒，就叫a吧。这里以<code>numRows=4</code>为例，<code>a=[[],[],[],[]]</code>，然后就开始用个循环，j递增，依次<code>a[j].append(s[i])</code>，注意到存在一个时刻，<code>j=4</code>，那么这个时候应该令<code>j=2</code>，并令<code>j</code>开始递减，然后存在一个时刻<code>j=-1</code>，这个时候再令<code>j=1</code>，同时<code>j</code>递增。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">convert</span>(<span class="params">self, s: <span class="built_in">str</span>, numRows: <span class="built_in">int</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">        <span class="keyword">if</span> numRows==<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> s</span><br><span class="line">        a = [[] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(numRows)]</span><br><span class="line">        j=-<span class="number">1</span></span><br><span class="line">        way=<span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> s:</span><br><span class="line">            j=j+way</span><br><span class="line">            <span class="keyword">if</span> j==numRows:</span><br><span class="line">                way=-<span class="number">1</span></span><br><span class="line">                j=numRows-<span class="number">2</span></span><br><span class="line">            <span class="keyword">elif</span> j==-<span class="number">1</span>:</span><br><span class="line">                way=<span class="number">1</span></span><br><span class="line">                j=<span class="number">1</span></span><br><span class="line">            a[j].append(i)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;&#x27;</span>.join([item <span class="keyword">for</span> sublist <span class="keyword">in</span> a <span class="keyword">for</span> item <span class="keyword">in</span> sublist])</span><br></pre></td></tr></table></figure>
-<p>那么这就是我的解法</p>
-<p><strong>Runtime</strong></p>
-<figure class="highlight plaintext"><figcaption><span>ms</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Beats 73.08 % of users with Python3</span><br></pre></td></tr></table></figure>
-<p><strong>Memory</strong></p>
+<h2 id="解法一">解法一</h2>
+<p>这个解法就是模拟它的排布要求，然后输出结果。具体过程为，先定义一个二维的空数组，我比较懒，就叫a吧。这里以<code>numRows=4</code>为例，<code>a=[[],[],[],[]]</code>，然后就开始用个循环，j递增，依次<code>a[j].append(s[i])</code>，注意到存在一个时刻，<code>j=4</code>，那么这个时候应该令<code>j=2</code>，并令<code>j</code>开始递减，然后存在一个时刻<code>j=-1</code>，这个时候再令<code>j=1</code>，同时<code>j</code>递增。
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">convert</span>(<span class="params">self, s: <span class="built_in">str</span>, numRows: <span class="built_in">int</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">        <span class="keyword">if</span> numRows==<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> s</span><br><span class="line">        a = [[] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(numRows)]</span><br><span class="line">        j=-<span class="number">1</span></span><br><span class="line">        way=<span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> s:</span><br><span class="line">            j=j+way</span><br><span class="line">            <span class="keyword">if</span> j==numRows:</span><br><span class="line">                way=-<span class="number">1</span></span><br><span class="line">                j=numRows-<span class="number">2</span></span><br><span class="line">            <span class="keyword">elif</span> j==-<span class="number">1</span>:</span><br><span class="line">                way=<span class="number">1</span></span><br><span class="line">                j=<span class="number">1</span></span><br><span class="line">            a[j].append(i)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;&#x27;</span>.join([item <span class="keyword">for</span> sublist <span class="keyword">in</span> a <span class="keyword">for</span> item <span class="keyword">in</span> sublist])</span><br></pre></td></tr></table></figure> 那么这就是我的解法</p>
+<p><strong>Runtime</strong> <figure class="highlight plaintext"><figcaption><span>ms</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Beats 73.08 % of users with Python3</span><br></pre></td></tr></table></figure> <strong>Memory</strong>
 <figure class="highlight plaintext"><figcaption><span>mb</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Beats 31.71 % of users with Python3</span><br></pre></td></tr></table></figure>
-<p>看到结果的时候，占的内存比较大，我感觉其实原理差不多，内存比别人大，那就是我变量的选取问题了。</p>
-<h2 id="解法二"><a class="header-anchor" href="#解法二"></a>解法二</h2>
-<p>这里挖个坑，感觉可以用纯数学的方式推导。</p>
+看到结果的时候，占的内存比较大，我感觉其实原理差不多，内存比别人大，那就是我变量的选取问题了。
+## 解法二 这里挖个坑，感觉可以用纯数学的方式推导。</p>
 
     </div>
 
@@ -351,7 +352,7 @@ P     I
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 

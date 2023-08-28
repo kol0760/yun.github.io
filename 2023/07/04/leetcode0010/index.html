@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"yun-iota.vercel.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":true,"height":100},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Regular Expression Matching 问题描述 Given an input string">
+    <meta name="description" content="Regular Expression Matching 问题描述 Given an input string s and a pattern p, implement regular expression matching with support for">
 <meta property="og:type" content="article">
 <meta property="og:title" content="leetcode0010">
 <meta property="og:url" content="https://yun-iota.vercel.app/2023/07/04/leetcode0010/index.html">
 <meta property="og:site_name" content="ハウルの動く城">
-<meta property="og:description" content="Regular Expression Matching 问题描述 Given an input string">
+<meta property="og:description" content="Regular Expression Matching 问题描述 Given an input string s and a pattern p, implement regular expression matching with support for">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-07-04T11:35:42.000Z">
 <meta property="article:modified_time" content="2023-08-25T03:20:09.738Z">
@@ -114,7 +114,8 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Regular-Expression-Matching"><span class="nav-number">1.</span> <span class="nav-text">Regular Expression Matching</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">问题描述</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#regular-expression-matching"><span class="nav-number">1.</span> <span class="nav-text">Regular
+Expression Matching</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">问题描述</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -215,14 +216,18 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="Regular-Expression-Matching"><a class="header-anchor" href="#Regular-Expression-Matching"></a><a target="_blank" rel="noopener" href="https://leetcode.com/problems/regular-expression-matching/">Regular Expression Matching</a></h1>
-<h2 id="问题描述"><a class="header-anchor" href="#问题描述"></a>问题描述</h2>
-<p>Given an input string <code>s</code> and a pattern <code>p</code>, implement regular expression matching with support for <code>'.'</code> and <code>'*'</code> where:</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="regular-expression-matching"><a target="_blank" rel="noopener" href="https://leetcode.com/problems/regular-expression-matching/">Regular
+Expression Matching</a></h1>
+<h2 id="问题描述">问题描述</h2>
+<p>Given an input string <code>s</code> and a pattern <code>p</code>,
+implement regular expression matching with support for <code>'.'</code>
+and <code>'*'</code> where:</p>
 <ul>
 <li><code>'.'</code> Matches any single character.​​​​</li>
 <li><code>'*'</code> Matches zero or more of the preceding element.</li>
 </ul>
-<p>The matching should cover the <strong>entire</strong> input string (not partial).</p>
+<p>The matching should cover the <strong>entire</strong> input string
+(not partial).</p>
 <p><strong>Example 1:</strong></p>
 <pre><strong>Input:</strong> s = &#34;aa&#34;, p = &#34;a&#34;
 <strong>Output:</strong> false
@@ -339,7 +344,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
