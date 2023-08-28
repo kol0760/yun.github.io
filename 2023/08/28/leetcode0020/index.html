@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"yun-iota.vercel.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":true,"height":100},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="20. Valid Parentheses 问题描述 Given a string s containing just the characters&#39;(&#39;, &#39;)&#39;, &#39;{&#39;, &#39;}&#39;,&#39;[&#39; and &#39;]&#39;, determine if the input string is valid.  An input string is valid if:   1. Open brackets must">
+    <meta name="description" content="20. Valid Parentheses 问题描述 Given a string s containing just the cha">
 <meta property="og:type" content="article">
 <meta property="og:title" content="leetcode0020">
 <meta property="og:url" content="https://yun-iota.vercel.app/2023/08/28/leetcode0020/index.html">
 <meta property="og:site_name" content="ハウルの動く城">
-<meta property="og:description" content="20. Valid Parentheses 问题描述 Given a string s containing just the characters&#39;(&#39;, &#39;)&#39;, &#39;{&#39;, &#39;}&#39;,&#39;[&#39; and &#39;]&#39;, determine if the input string is valid.  An input string is valid if:   1. Open brackets must">
+<meta property="og:description" content="20. Valid Parentheses 问题描述 Given a string s containing just the cha">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-08-28T05:40:22.000Z">
 <meta property="article:modified_time" content="2023-08-28T06:00:43.466Z">
@@ -114,8 +114,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#valid-parentheses"><span class="nav-number">1.</span> <span class="nav-text">20. Valid
-Parentheses</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80"><span class="nav-number">1.2.</span> <span class="nav-text">解法一</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#20-Valid-Parentheses"><span class="nav-number">1.</span> <span class="nav-text">20. Valid Parentheses</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80"><span class="nav-number">1.2.</span> <span class="nav-text">解法一</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -128,7 +127,7 @@ Parentheses</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a 
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -216,19 +215,14 @@ Parentheses</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a 
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="valid-parentheses"><a target="_blank" rel="noopener" href="https://leetcode.com/problems/valid-parentheses/">20. Valid
-Parentheses</a></h1>
-<h2 id="问题描述">问题描述</h2>
-<p>Given a string <code>s</code> containing just the characters
-<code>'('</code>, <code>')'</code>, <code>'&#123;'</code>, <code>'&#125;'</code>,
-<code>'['</code> and <code>']'</code>, determine if the input string is
-valid.</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="20-Valid-Parentheses"><a class="header-anchor" href="#20-Valid-Parentheses"></a><a target="_blank" rel="noopener" href="https://leetcode.com/problems/valid-parentheses/">20. Valid Parentheses</a></h1>
+<h2 id="问题描述"><a class="header-anchor" href="#问题描述"></a>问题描述</h2>
+<p>Given a string <code>s</code> containing just the characters <code>'('</code>, <code>')'</code>, <code>'&#123;'</code>, <code>'&#125;'</code>, <code>'['</code> and <code>']'</code>, determine if the input string is valid.</p>
 <p>An input string is valid if:</p>
-<ol type="1">
+<ol>
 <li>Open brackets must be closed by the same type of brackets.</li>
 <li>Open brackets must be closed in the correct order.</li>
-<li>Every close bracket has a corresponding open bracket of the same
-type.</li>
+<li>Every close bracket has a corresponding open bracket of the same type.</li>
 </ol>
 <p><strong>Example 1:</strong></p>
 <pre><strong>Input:</strong> s = &#34;()&#34;
@@ -241,27 +235,30 @@ type.</li>
 <p><strong>Example 3:</strong></p>
 <pre><strong>Input:</strong> s = &#34;(]&#34;
 <strong>Output:</strong> false</pre>
-一个判断括号是否合理的函数。括号合理指的是，一个左括号，右边一定会有对应的右括号。总而言之就是
+<p>一个判断括号是否合理的函数。括号合理指的是，一个左括号，右边一定会有对应的右括号。总而言之就是</p>
 <pre>
 <strong>这是合理的</strong> [({})](),[]{},((()))
 <strong>这是不合理的</strong> ([)],[])
 </pre>
-<h2 id="解法一">解法一</h2>
-<p>那么解决这种题目的核心关键方法就是，使用栈。 &gt;堆栈的基本特点：
-&gt;1. 先入后出，后入先出。 &gt;2.
-除头尾节点之外，每个元素有一个前驱，一个后继。</p>
+<h2 id="解法一"><a class="header-anchor" href="#解法一"></a>解法一</h2>
+<p>那么解决这种题目的核心关键方法就是，使用栈。</p>
+<blockquote>
+<p>堆栈的基本特点：</p>
+<ol>
+<li>先入后出，后入先出。</li>
+<li>除头尾节点之外，每个元素有一个前驱，一个后继。</li>
+</ol>
+</blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isValid</span>(<span class="params">self, s</span>):</span><br><span class="line">        stack = [] <span class="comment"># only use append and pop</span></span><br><span class="line">        pairs = &#123;</span><br><span class="line">            <span class="string">&#x27;(&#x27;</span>: <span class="string">&#x27;)&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;&#123;&#x27;</span>: <span class="string">&#x27;&#125;&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;[&#x27;</span>: <span class="string">&#x27;]&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> bracket <span class="keyword">in</span> s:</span><br><span class="line">            <span class="keyword">if</span> bracket <span class="keyword">in</span> pairs:</span><br><span class="line">                stack.append(bracket)</span><br><span class="line">            <span class="keyword">elif</span> <span class="built_in">len</span>(stack) == <span class="number">0</span> <span class="keyword">or</span> bracket != pairs[stack.pop()]:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(stack) == <span class="number">0</span></span><br></pre></td></tr></table></figure>
-<p>对字符串进行一个循环，每次遇到一个括号，首先检查它是不是左括号的类型，如果是，则将其入栈。当遇到右括号的时候，就开始检查，这个右括号与栈顶的左括号所对应的右括号是否相等。注意这个地方用的是pop，也就是说，栈顶的左括号同时被移出。
+<p>对字符串进行一个循环，每次遇到一个括号，首先检查它是不是左括号的类型，如果是，则将其入栈。当遇到右括号的时候，就开始检查，这个右括号与栈顶的左括号所对应的右括号是否相等。注意这个地方用的是pop，也就是说，栈顶的左括号同时被移出。<br>
 这里以<code>(&#123;&#125;)</code>和<code>([)]</code>为例。</p>
 <blockquote>
-<strong><code>(&#123;&#125;)</code></strong>
-<p>
-</p><p>首先<code>(</code>和<code>&#123;</code>都会依次入栈。此时栈顶是<code>&#123;</code>，下一个是<code>&#125;</code>，那么就会检索<code>&#125;</code>和栈顶的左括号所对应的左右括号是否相等，没问题。那么下一个<code>)</code>同理。</p>
+<p><strong><code>(&#123;&#125;)</code></strong> </p><p><br>
+首先<code>(</code>和<code>&#123;</code>都会依次入栈。此时栈顶是<code>&#123;</code>，下一个是<code>&#125;</code>，那么就会检索<code>&#125;</code>和栈顶的左括号所对应的左右括号是否相等，没问题。那么下一个<code>)</code>同理。</p>
 </blockquote>
 <blockquote>
-<strong><code>([)]</code></strong>
-<p>
-</p><p>首先<code>(</code>和<code>[</code>都会依次入栈。此时栈顶是<code>[</code>，下一个是<code>)</code>，那么就会检索<code>)</code>和栈顶的左括号所对应的右括号是否相等。栈顶的左括号<code>"["</code>所对应的右括号<code>"]"</code>，与<code>")"</code>不匹配。</p>
+<p><strong><code>([)]</code></strong> </p><p><br>
+首先<code>(</code>和<code>[</code>都会依次入栈。此时栈顶是<code>[</code>，下一个是<code>)</code>，那么就会检索<code>)</code>和栈顶的左括号所对应的右括号是否相等。栈顶的左括号<code>&quot;[&quot;</code>所对应的右括号<code>&quot;]&quot;</code>，与<code>&quot;)&quot;</code>不匹配。</p>
 </blockquote>
 
     </div>
@@ -302,9 +299,6 @@ type.</li>
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/08/28/leetcode0021/" rel="next" title="leetcode0021">
-                  leetcode0021 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>

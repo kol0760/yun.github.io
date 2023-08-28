@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"yun-iota.vercel.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":true,"height":100},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Maximal Network Rank 问题描述 There is an infrastructure of n cities with some number of roads connecting these cities. Eachroads[i] &#x3D; [ai, bi]indicates that there is a bidirectional road between citiesai">
+    <meta name="description" content="Maximal Network Rank 问题描述 There is an infrastructure of n cities">
 <meta property="og:type" content="article">
 <meta property="og:title" content="leetcode1615">
 <meta property="og:url" content="https://yun-iota.vercel.app/2023/08/18/leetcode1615/index.html">
 <meta property="og:site_name" content="ハウルの動く城">
-<meta property="og:description" content="Maximal Network Rank 问题描述 There is an infrastructure of n cities with some number of roads connecting these cities. Eachroads[i] &#x3D; [ai, bi]indicates that there is a bidirectional road between citiesai">
+<meta property="og:description" content="Maximal Network Rank 问题描述 There is an infrastructure of n cities">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://assets.leetcode.com/uploads/2020/09/21/ex1.png">
 <meta property="og:image" content="https://assets.leetcode.com/uploads/2020/09/21/ex2.png">
@@ -118,8 +118,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#maximal-network-rank"><span class="nav-number">1.</span> <span class="nav-text">Maximal
-Network Rank</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">问题描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%E6%9E%9A%E4%B8%BE%E6%B3%95"><span class="nav-number">1.1.1.</span> <span class="nav-text">解法一：枚举法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5"><span class="nav-number">1.1.2.</span> <span class="nav-text">解法二：邻接矩阵</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Maximal-Network-Rank"><span class="nav-number">1.</span> <span class="nav-text">Maximal Network Rank</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">问题描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%EF%BC%9A%E6%9E%9A%E4%B8%BE%E6%B3%95"><span class="nav-number">1.1.1.</span> <span class="nav-text">解法一：枚举法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%EF%BC%9A%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5"><span class="nav-number">1.1.2.</span> <span class="nav-text">解法二：邻接矩阵</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -132,7 +131,7 @@ Network Rank</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -220,34 +219,20 @@ Network Rank</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="maximal-network-rank"><a target="_blank" rel="noopener" href="https://leetcode.com/problems/maximal-network-rank/">Maximal
-Network Rank</a></h1>
-<h2 id="问题描述">问题描述</h2>
-<p>There is an infrastructure of <code>n</code> cities with some number
-of <code>roads</code> connecting these cities. Each
-<code>roads[i] = [a&lt;sub&gt;i&lt;/sub&gt;, b&lt;sub&gt;i&lt;/sub&gt;]</code>
-indicates that there is a bidirectional road between cities
-<code>a&lt;sub&gt;i&lt;/sub&gt;</code> and
-<code>b&lt;sub&gt;i&lt;/sub&gt;</code>.</p>
-<p>The <strong>network rank</strong> of <strong>two different
-cities</strong> is defined as the total number of
-<strong>directly</strong> connected roads to <strong>either</strong>
-city. If a road is directly connected to both cities, it is only counted
-<strong>once</strong> .</p>
-<p>The <strong>maximal network rank </strong>of the infrastructure is
-the <strong>maximum network rank</strong> of all pairs of different
-cities.</p>
-<p>Given the integer <code>n</code> and the array <code>roads</code>,
-return <em>the <strong>maximal network rank</strong> of the entire
-infrastructure</em> .</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="Maximal-Network-Rank"><a class="header-anchor" href="#Maximal-Network-Rank"></a><a target="_blank" rel="noopener" href="https://leetcode.com/problems/maximal-network-rank/">Maximal Network Rank</a></h1>
+<h2 id="问题描述"><a class="header-anchor" href="#问题描述"></a>问题描述</h2>
+<p>There is an infrastructure of <code>n</code> cities with some number of <code>roads</code> connecting these cities. Each <code>roads[i] = [a&lt;sub&gt;i&lt;/sub&gt;, b&lt;sub&gt;i&lt;/sub&gt;]</code> indicates that there is a bidirectional road between cities <code>a&lt;sub&gt;i&lt;/sub&gt;</code> and <code>b&lt;sub&gt;i&lt;/sub&gt;</code>.</p>
+<p>The <strong>network rank</strong> of <strong>two different cities</strong> is defined as the total number of <strong>directly</strong> connected roads to <strong>either</strong> city. If a road is directly connected to both cities, it is only counted  <strong>once</strong> .</p>
+<p>The **maximal network rank **of the infrastructure is the <strong>maximum network rank</strong> of all pairs of different cities.</p>
+<p>Given the integer <code>n</code> and the array <code>roads</code>, return  <em>the <strong>maximal network rank</strong> of the entire infrastructure</em> .</p>
 <p><strong>Example 1:</strong></p>
-<p><img src="https://assets.leetcode.com/uploads/2020/09/21/ex1.png"></p>
+<p><img src="https://assets.leetcode.com/uploads/2020/09/21/ex1.png" alt></p>
 <pre><strong>Input:</strong> n = 4, roads = [[0,1],[0,3],[1,2],[1,3]]
 <strong>Output:</strong> 4
 <strong>Explanation:</strong> The network rank of cities 0 and 1 is 4 as there are 4 roads that are connected to either 0 or 1. The road between 0 and 1 is only counted once.
 </pre>
 <p><strong>Example 2:</strong></p>
-<p><img src="https://assets.leetcode.com/uploads/2020/09/21/ex2.png"></p>
+<p><img src="https://assets.leetcode.com/uploads/2020/09/21/ex2.png" alt></p>
 <pre><strong>Input:</strong> n = 5, roads = [[0,1],[0,3],[1,2],[1,3],[2,3],[2,4]]
 <strong>Output:</strong> 5
 <strong>Explanation:</strong> There are 5 roads that are connected to cities 1 or 2.
@@ -256,19 +241,19 @@ infrastructure</em> .</p>
 <pre><strong>Input:</strong> n = 8, roads = [[0,1],[1,2],[2,3],[2,4],[5,6],[5,7]]
 <strong>Output:</strong> 5
 <strong>Explanation:</strong> The network rank of 2 and 5 is 5. Notice that all the cities do not have to be connected.</pre>
-<p>这是一个有关图的题目。我现在看到图，下意识都会把它和化学结构联想在一起。
-图真的很好表示化学结构，节点表示原子，边代表化学键。
+<p>这是一个有关图的题目。我现在看到图，下意识都会把它和化学结构联想在一起。<br>
+图真的很好表示化学结构，节点表示原子，边代表化学键。<br>
 扯远了，回到正题，这里就是要找到一对城市，这对城市的边的总数最多。好理解吗？很好理解啦~</p>
-<p><img src="https://assets.leetcode.com/uploads/2020/09/21/ex2.png"></p>
+<p><img src="https://assets.leetcode.com/uploads/2020/09/21/ex2.png" alt></p>
 <p>1有3条边，2有3条边，加起来5条（其中1条重复边），所以输出5。</p>
-<h3 id="解法一枚举法">解法一：枚举法</h3>
-<p>统计每个点的边<span class="math inline">\(l_n\)</span>的数目，两个点的总边数为<span class="math inline">\(l_a+l_b\)</span>，如果点[a,b]或[b,a]存在在roads中，则减一。</p>
+<h3 id="解法一：枚举法"><a class="header-anchor" href="#解法一：枚举法"></a>解法一：枚举法</h3>
+<p>统计每个点的边$l_n$的数目，两个点的总边数为$l_a+l_b$，如果点[a,b]或[b,a]存在在roads中，则减一。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maximalNetworkRank</span>(<span class="params">self, n: <span class="built_in">int</span>, roads: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        flat_list = [item <span class="keyword">for</span> sublist <span class="keyword">in</span> roads <span class="keyword">for</span> item <span class="keyword">in</span> sublist]</span><br><span class="line">       <span class="comment"># flat_list把二维展开成一维</span></span><br><span class="line">        a=[<span class="number">0</span>]*n</span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> flat_list:</span><br><span class="line">            a[num]=a[num]+<span class="number">1</span></span><br><span class="line">        <span class="comment"># 矩阵a用于统计每个数字出现的次数</span></span><br><span class="line">        result = <span class="built_in">sorted</span>(<span class="built_in">enumerate</span>(a), key=<span class="keyword">lambda</span> x: x[<span class="number">1</span>], reverse=<span class="literal">True</span>)</span><br><span class="line">        <span class="comment"># result是一个二维数组，以出现的次数排序，第一列是数字，第二列是出现的次数</span></span><br><span class="line">        maxnumber=<span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i+<span class="number">1</span>,n):</span><br><span class="line">                <span class="keyword">if</span> [result[i][<span class="number">0</span>],result[j][<span class="number">0</span>]] <span class="keyword">in</span> roads <span class="keyword">or</span> [result[j][<span class="number">0</span>],result[i][<span class="number">0</span>]] <span class="keyword">in</span> roads:</span><br><span class="line">                    number=result[i][<span class="number">1</span>]+result[j][<span class="number">1</span>]-<span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span> :</span><br><span class="line">                    number=result[i][<span class="number">1</span>]+result[j][<span class="number">1</span>]</span><br><span class="line">                maxnumber=<span class="built_in">max</span>(maxnumber,number)</span><br><span class="line">        <span class="keyword">return</span> maxnumber</span><br></pre></td></tr></table></figure>
 <p>这次我学聪明了，我不叫什么暴力法，我叫枚举法，高大上了有没有。</p>
-<h3 id="解法二邻接矩阵">解法二：邻接矩阵</h3>
+<h3 id="解法二：邻接矩阵"><a class="header-anchor" href="#解法二：邻接矩阵"></a>解法二：邻接矩阵</h3>
 <p>大家好，我顺便学习了一下，原来这个叫做邻接表。那这就激起了我的学习兴趣了，这下不得不把邻接表和邻接矩阵转换一下了。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maximalNetworkRank</span>(<span class="params">self, n: <span class="built_in">int</span>, roads: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        adj_matrix = [[<span class="number">0</span>] * n <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n)]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> roads:</span><br><span class="line">            adj_matrix[i[<span class="number">0</span>]][i[<span class="number">1</span>]]=<span class="number">1</span></span><br><span class="line">            adj_matrix[i[<span class="number">1</span>]][i[<span class="number">0</span>]]=<span class="number">1</span></span><br><span class="line">        max_rank = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i+<span class="number">1</span>, n):</span><br><span class="line">                rank = <span class="built_in">sum</span>(adj_matrix[i]) + <span class="built_in">sum</span>(adj_matrix[j]) - adj_matrix[i][j]</span><br><span class="line">                max_rank = <span class="built_in">max</span>(max_rank, rank)</span><br><span class="line">        <span class="keyword">return</span> max_rank        </span><br></pre></td></tr></table></figure>
-<p>这个解法更简洁，建立一个邻接矩阵，然后计算秩就可以了。
+<p>这个解法更简洁，建立一个邻接矩阵，然后计算秩就可以了。<br>
 但是这里不得不强调一点，这两种解法的复杂度都不低。</p>
 
     </div>

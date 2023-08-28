@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"yun-iota.vercel.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":true,"height":100},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="这里谈一个和上一题相似但是更简单的题目。  在一个边长为1的正方形上任意取两个点，那么这两个点的平均距离是多少？如果是半径为1的圆呢？ 这个计算更为简单，我们先谈论问题圆。  显然，任取两点的距离可以用函数\(f(\theta_1,\theta_2)\)表示。 其中点a和点b的坐标借助极坐标可以分别表示为 \[ \begin{aligned} &amp;a(rcos\theta_1,rsin\theta_">
+    <meta name="description" content="这里谈一个和上一题相似但是更简单的题目。 在一个边长为1的正方形上任意取两个点，那么这两个点的平均距离是多少？如果是半径为1的圆呢？ 这个计算更为简单，我们先谈论问题圆。 显然，任取两点的距离可以用函数$f(\theta_1,\theta_2)$表示。 其中点a和点b的坐标借助极坐标可以分别表示为 $$ \begin{aligned} &amp;a(rcos\theta_1,rsin\theta_">
 <meta property="og:type" content="article">
 <meta property="og:title" content="tmp">
 <meta property="og:url" content="https://yun-iota.vercel.app/2023/08/20/math002/index.html">
 <meta property="og:site_name" content="ハウルの動く城">
-<meta property="og:description" content="这里谈一个和上一题相似但是更简单的题目。  在一个边长为1的正方形上任意取两个点，那么这两个点的平均距离是多少？如果是半径为1的圆呢？ 这个计算更为简单，我们先谈论问题圆。  显然，任取两点的距离可以用函数\(f(\theta_1,\theta_2)\)表示。 其中点a和点b的坐标借助极坐标可以分别表示为 \[ \begin{aligned} &amp;a(rcos\theta_1,rsin\theta_">
+<meta property="og:description" content="这里谈一个和上一题相似但是更简单的题目。 在一个边长为1的正方形上任意取两个点，那么这两个点的平均距离是多少？如果是半径为1的圆呢？ 这个计算更为简单，我们先谈论问题圆。 显然，任取两点的距离可以用函数$f(\theta_1,\theta_2)$表示。 其中点a和点b的坐标借助极坐标可以分别表示为 $$ \begin{aligned} &amp;a(rcos\theta_1,rsin\theta_">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://yun-iota.vercel.app/2023/08/20/math002/square.png">
 <meta property="og:image" content="https://yun-iota.vercel.app/2023/08/20/math002/int_area.png">
@@ -129,7 +129,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -218,63 +218,61 @@
     
     
     <div class="post-body" itemprop="articleBody"><p>这里谈一个和上一题相似但是更简单的题目。</p>
-<p>在一个边长为1的正方形上任意取两个点，那么这两个点的平均距离是多少？如果是半径为1的圆呢？
+<p>在一个边长为1的正方形上任意取两个点，那么这两个点的平均距离是多少？如果是半径为1的圆呢？<br>
 这个计算更为简单，我们先谈论问题圆。</p>
-显然，任取两点的距离可以用函数<span class="math inline">\(f(\theta_1,\theta_2)\)</span>表示。
-其中点a和点b的坐标借助极坐标可以分别表示为 <span class="math display">\[
-\begin{aligned}
-&amp;a(rcos\theta_1,rsin\theta_1)
-&amp;b(rcos\theta_2,rsin\theta_2)
-\end{aligned}
-\]</span> 其中r为1。 那么距离公式则为: <span class="math display">\[
-\begin{aligned}
-f(\theta_1,\theta_2)&amp;=
-\sqrt{(cos\theta_1-cos\theta_2)^2+(sin\theta_1-sin\theta_2)^2}\\
-&amp;=\sqrt{2-2cos\theta_1cos\theta_2-2sin\theta_1sin\theta_2}\\
-&amp;=\sqrt{2-2cos(\theta_1-\theta_2)}\\
-&amp;=\sqrt{2} \sqrt{1-cos(\theta_1-\theta_2)}\\
-&amp;=\sqrt{2}\sqrt{2sin^2\frac{\theta_1-\theta_2}{2}}\\
-&amp;=2 |sin\frac{\theta_1-\theta_2}{2}|
-\end{aligned}
-\]</span>
-OK，那么很显然，根据微积分的知识我们就有，平均距离，等于积分除以积分面积。也就是
-<span class="math display">\[
-\overline{f}(\theta_1,\theta_2)=\frac{\int_0^{2\pi} \int_0^{2\pi}{2
-|sin\frac{\theta_1-\theta_2}{2}|} d\theta_1d\theta_2}{2\pi*2\pi}
-\]</span>
-好的，那我们简简单单计算一下这个积分公式吧。对于这样一个二重积分，第一件事是观察积分区间。可以看到积分空间的形状
-<div data-align="center">
+<p>显然，任取两点的距离可以用函数$f(\theta_1,\theta_2)$表示。<br>
+其中点a和点b的坐标借助极坐标可以分别表示为<br>
+$$<br>
+\begin{aligned}<br>
+&amp;a(rcos\theta_1,rsin\theta_1)<br>
+&amp;b(rcos\theta_2,rsin\theta_2)<br>
+\end{aligned}<br>
+$$<br>
+其中r为1。<br>
+那么距离公式则为:<br>
+$$<br>
+\begin{aligned}<br>
+f(\theta_1,\theta_2)&amp;=<br>
+\sqrt{(cos\theta_1-cos\theta_2)<sup>2+(sin\theta_1-sin\theta_2)</sup>2}\<br>
+&amp;=\sqrt{2-2cos\theta_1cos\theta_2-2sin\theta_1sin\theta_2}\<br>
+&amp;=\sqrt{2-2cos(\theta_1-\theta_2)}\<br>
+&amp;=\sqrt{2} \sqrt{1-cos(\theta_1-\theta_2)}\<br>
+&amp;=\sqrt{2}\sqrt{2sin^2\frac{\theta_1-\theta_2}{2}}\<br>
+&amp;=2 |sin\frac{\theta_1-\theta_2}{2}|<br>
+\end{aligned}<br>
+$$<br>
+OK，那么很显然，根据微积分的知识我们就有，平均距离，等于积分除以积分面积。也就是<br>
+$$<br>
+\overline{f}(\theta_1,\theta_2)=\frac{\int_0^{2\pi} \int_0^{2\pi}{2 |sin\frac{\theta_1-\theta_2}{2}|} d\theta_1d\theta_2}{2\pi*2\pi}<br>
+$$<br>
+好的，那我们简简单单计算一下这个积分公式吧。对于这样一个二重积分，第一件事是观察积分区间。可以看到积分空间的形状</p>
+<div align="center">
 <img src="/2023/08/20/math002/square.png" width="50%">
-<center style="font-size:14px;color:#999;text-decoration:underline">
-积分空间
-</center>
+<center style="font-size:14px;color:#999;text-decoration:underline">积分空间</center> 
 </div>
 注意到这是一个绝对值的积分，我们去一下绝对值会发现，这个积分区域是对称的，因此这个积分等于两倍的三角形区域的积分面积值。
-<div data-align="center">
+<div align="center">
 <img src="/2023/08/20/math002/int_area.png" width="50%">
-<center style="font-size:14px;color:#999;text-decoration:underline">
-红色区域为待积分区间
-</center>
+<center style="font-size:14px;color:#999;text-decoration:underline">红色区域为待积分区间</center> 
 </div>
-<p>那么接下来就是去掉绝对值，积分结果多一倍，然后就是一系列简单的操作了。</p>
-<p><span class="math display">\[
-\begin{align*}
-&amp;\int_0^{2\pi} \int_0^{2\pi}{2 |sin\frac{\theta_1-\theta_2}{2}|}
-d\theta_1d\theta_2\\
-&amp;=\int_0^{2\pi}
-d\theta_2\int_{\theta_2}^{1}{4sin\frac{\theta_1-\theta_2}{2}}
-d\theta_1\\
-&amp;=\int_0^{2\pi}{-8\left.{cos\frac{\theta_1-\theta_2}{2}}\right|_{2\pi}
-^{\theta_2}} d\theta_2\\
-&amp;=-8\int_0^{2\pi}{-1-cos{\frac{2\pi-\theta_2}{2}}} d\theta_2\\
-&amp;=16\pi+8\int_0^{2\pi}{cos{\frac{2\pi-\theta_2}{2}}}d\theta_2\\
-&amp;=16\pi
-\end{align*}
-\]</span> 因此，最后的结果为： <span class="math display">\[
-\frac{\int_0^{2\pi} \int_0^{2\pi}{2 |sin\frac{\theta_1-\theta_2}{2}|}
-d\theta_1d\theta_2}{2\pi*2\pi}=\frac{16\pi}{4\pi^2}=\frac{4}{\pi}
-\]</span></p>
-这里的话，我再补充一个用python模拟的结果。 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line">total_len = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> tqdm(<span class="built_in">range</span>(<span class="number">10000000</span>)):</span><br><span class="line">  thert1=random.uniform(<span class="number">0</span>, <span class="number">2</span> * math.pi)</span><br><span class="line">  thert2=random.uniform(<span class="number">0</span>, <span class="number">2</span> * math.pi)</span><br><span class="line">  a2 = [math.cos(thert1),math.sin(thert1)]</span><br><span class="line">  b2 = [math.cos(thert2),math.sin(thert2)]</span><br><span class="line">  dist = math.sqrt((a2[<span class="number">0</span>] - b2[<span class="number">0</span>])**<span class="number">2</span> + (a2[<span class="number">1</span>] - b2[<span class="number">1</span>])**<span class="number">2</span>)</span><br><span class="line">  total_len += dist</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n&quot;</span>,total_len / <span class="number">10000000</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="number">4</span>/math.pi)</span><br></pre></td></tr></table></figure> 结果是这样的
+那么接下来就是去掉绝对值，积分结果多一倍，然后就是一系列简单的操作了。
+<p>$$<br>
+\begin{align*}<br>
+&amp;\int_0^{2\pi} \int_0^{2\pi}{2 |sin\frac{\theta_1-\theta_2}{2}|} d\theta_1d\theta_2\<br>
+&amp;=\int_0^{2\pi} d\theta_2\int_{\theta_2}^{1}{4sin\frac{\theta_1-\theta_2}{2}} d\theta_1\<br>
+&amp;=\int_0^{2\pi}{-8\left.{cos\frac{\theta_1-\theta_2}{2}}\right|_{2\pi} ^{\theta_2}} d\theta_2\<br>
+&amp;=-8\int_0^{2\pi}{-1-cos{\frac{2\pi-\theta_2}{2}}} d\theta_2\<br>
+&amp;=16\pi+8\int_0^{2\pi}{cos{\frac{2\pi-\theta_2}{2}}}d\theta_2\<br>
+&amp;=16\pi<br>
+\end{align*}<br>
+$$<br>
+因此，最后的结果为：<br>
+$$<br>
+\frac{\int_0^{2\pi} \int_0^{2\pi}{2 |sin\frac{\theta_1-\theta_2}{2}|} d\theta_1d\theta_2}{2\pi*2\pi}=\frac{16\pi}{4\pi^2}=\frac{4}{\pi}<br>
+$$</p>
+<p>这里的话，我再补充一个用python模拟的结果。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line">total_len = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> tqdm(<span class="built_in">range</span>(<span class="number">10000000</span>)):</span><br><span class="line">  thert1=random.uniform(<span class="number">0</span>, <span class="number">2</span> * math.pi)</span><br><span class="line">  thert2=random.uniform(<span class="number">0</span>, <span class="number">2</span> * math.pi)</span><br><span class="line">  a2 = [math.cos(thert1),math.sin(thert1)]</span><br><span class="line">  b2 = [math.cos(thert2),math.sin(thert2)]</span><br><span class="line">  dist = math.sqrt((a2[<span class="number">0</span>] - b2[<span class="number">0</span>])**<span class="number">2</span> + (a2[<span class="number">1</span>] - b2[<span class="number">1</span>])**<span class="number">2</span>)</span><br><span class="line">  total_len += dist</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n&quot;</span>,total_len / <span class="number">10000000</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="number">4</span>/math.pi)</span><br></pre></td></tr></table></figure>
+<p>结果是这样的</p>
 <pre>
 <strong>1.2732001083259852</strong>
 <strong>1.2732395447351628</strong>

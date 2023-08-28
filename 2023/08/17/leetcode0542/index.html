@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"yun-iota.vercel.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":true,"height":100},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="01 Matrix 问题描述 Given an m x n binary matrix mat, returnthe distance of the nearest 0 * for each cell* .  The distance between two adjacent cells is 1.  Example 1:    Input: mat &#x3D; [[0,0,0],[0,1,0],[0,0">
+    <meta name="description" content="01 Matrix 问题描述 Given an m x n binary matrix mat, return *the distance of the neares">
 <meta property="og:type" content="article">
 <meta property="og:title" content="leetcode0542">
 <meta property="og:url" content="https://yun-iota.vercel.app/2023/08/17/leetcode0542/index.html">
 <meta property="og:site_name" content="ハウルの動く城">
-<meta property="og:description" content="01 Matrix 问题描述 Given an m x n binary matrix mat, returnthe distance of the nearest 0 * for each cell* .  The distance between two adjacent cells is 1.  Example 1:    Input: mat &#x3D; [[0,0,0],[0,1,0],[0,0">
+<meta property="og:description" content="01 Matrix 问题描述 Given an m x n binary matrix mat, return *the distance of the neares">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://assets.leetcode.com/uploads/2021/04/24/01-1-grid.jpg">
 <meta property="og:image" content="https://assets.leetcode.com/uploads/2021/04/24/01-2-grid.jpg">
@@ -117,8 +117,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#matrix"><span class="nav-number">1.</span> <span class="nav-text">01
-Matrix</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">问题描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80"><span class="nav-number">1.1.1.</span> <span class="nav-text">解法一：</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#01-Matrix"><span class="nav-number">1.</span> <span class="nav-text"> 01 Matrix</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">问题描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%EF%BC%9A"><span class="nav-number">1.1.1.</span> <span class="nav-text">解法一：</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -131,7 +130,7 @@ Matrix</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -219,29 +218,26 @@ Matrix</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="matrix"><a target="_blank" rel="noopener" href="https://leetcode.com/problems/01-matrix/">01
-Matrix</a></h1>
-<h2 id="问题描述">问题描述</h2>
-<p>Given an <code>m x n</code> binary matrix <code>mat</code>, return
-<em>the distance of the nearest </em><code>0</code> * for each cell*
-.</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="01-Matrix"><a class="header-anchor" href="#01-Matrix"></a><a target="_blank" rel="noopener" href="https://leetcode.com/problems/01-matrix/"> 01 Matrix</a></h1>
+<h2 id="问题描述"><a class="header-anchor" href="#问题描述"></a>问题描述</h2>
+<p>Given an <code>m x n</code> binary matrix <code>mat</code>, return *the distance of the nearest <em><code>0</code> * for each cell</em> .</p>
 <p>The distance between two adjacent cells is <code>1</code>.</p>
 <p><strong>Example 1:</strong></p>
-<p><img src="https://assets.leetcode.com/uploads/2021/04/24/01-1-grid.jpg"></p>
+<p><img src="https://assets.leetcode.com/uploads/2021/04/24/01-1-grid.jpg" alt></p>
 <pre><strong>Input:</strong> mat = [[0,0,0],[0,1,0],[0,0,0]]
 <strong>Output:</strong> [[0,0,0],[0,1,0],[0,0,0]]
 </pre>
 <p><strong>Example 2:</strong></p>
-<p><img src="https://assets.leetcode.com/uploads/2021/04/24/01-2-grid.jpg"></p>
+<p><img src="https://assets.leetcode.com/uploads/2021/04/24/01-2-grid.jpg" alt></p>
 <pre><strong>Input:</strong> mat = [[0,0,0],[0,1,0],[1,1,1]]
 <strong>Output:</strong> [[0,0,0],[0,1,0],[1,2,1]]</pre>
-<h3 id="解法一">解法一：</h3>
-<p>这题很显然，得用动态规划，找最小值。步骤如下：
-新建一个<code>list</code>，原本<code>mat</code>中为0的位置，仍然为0，为1的位置则初始化为<code>m+n</code>。
+<h3 id="解法一："><a class="header-anchor" href="#解法一："></a>解法一：</h3>
+<p>这题很显然，得用动态规划，找最小值。步骤如下：<br>
+新建一个<code>list</code>，原本<code>mat</code>中为0的位置，仍然为0，为1的位置则初始化为<code>m+n</code>。<br>
 我这里拿这个<code>list</code>为例子，它就是<code>mat</code>。</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>0</th>
 <th>0</th>
 <th>0</th>
@@ -249,25 +245,25 @@ Matrix</a></h1>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>0</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
 </tr>
-<tr class="even">
+<tr>
 <td>1</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>1</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
 </tr>
-<tr class="even">
+<tr>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -278,7 +274,7 @@ Matrix</a></h1>
 <p>那么我们初始化的<code>dist</code>矩阵应该长啥样呢？</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>0</th>
 <th>0</th>
 <th>0</th>
@@ -286,25 +282,25 @@ Matrix</a></h1>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>0</td>
 <td>9</td>
 <td>9</td>
 <td>0</td>
 </tr>
-<tr class="even">
+<tr>
 <td>9</td>
 <td>9</td>
 <td>0</td>
 <td>9</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>9</td>
 <td>9</td>
 <td>9</td>
 <td>9</td>
 </tr>
-<tr class="even">
+<tr>
 <td>9</td>
 <td>9</td>
 <td>9</td>
@@ -312,7 +308,7 @@ Matrix</a></h1>
 </tr>
 </tbody>
 </table>
-<p>接下来就是两次遍历法，一次从左上角到右下角，一次从右下角到左上角。
+<p>接下来就是两次遍历法，一次从左上角到右下角，一次从右下角到左上角。<br>
 从左上角到右下角</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dist[i][j]=<span class="built_in">min</span>(dist[i][j],dist[i-<span class="number">1</span>][j]+<span class="number">1</span>,dist[i][j-<span class="number">1</span>]+<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 <p>从右下角到左上角</p>

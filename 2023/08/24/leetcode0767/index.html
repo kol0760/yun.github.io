@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"yun-iota.vercel.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":true,"height":100},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Reorganize String 问题描述 Given a string s, rearrange the characters ofs so that any two adjacent characters are not the same.  Return any possible rearrangement of s or return &quot;&quot; if not possible .  Exam">
+    <meta name="description" content="Reorganize String 问题描述 Given a string s, rearrange the charac">
 <meta property="og:type" content="article">
 <meta property="og:title" content="leetcode0767">
 <meta property="og:url" content="https://yun-iota.vercel.app/2023/08/24/leetcode0767/index.html">
 <meta property="og:site_name" content="ハウルの動く城">
-<meta property="og:description" content="Reorganize String 问题描述 Given a string s, rearrange the characters ofs so that any two adjacent characters are not the same.  Return any possible rearrangement of s or return &quot;&quot; if not possible .  Exam">
+<meta property="og:description" content="Reorganize String 问题描述 Given a string s, rearrange the charac">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-08-24T08:50:55.000Z">
 <meta property="article:modified_time" content="2023-08-25T03:20:09.731Z">
@@ -114,8 +114,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#reorganize-string"><span class="nav-number">1.</span> <span class="nav-text">Reorganize
-String</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">问题描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80"><span class="nav-number">1.1.1.</span> <span class="nav-text">解法一</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Reorganize-String"><span class="nav-number">1.</span> <span class="nav-text">Reorganize String</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">问题描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80"><span class="nav-number">1.1.1.</span> <span class="nav-text">解法一</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -128,7 +127,7 @@ String</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -216,13 +215,10 @@ String</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="reorganize-string"><a target="_blank" rel="noopener" href="https://leetcode.com/problems/reorganize-string/description/">Reorganize
-String</a></h1>
-<h2 id="问题描述">问题描述</h2>
-<p>Given a string <code>s</code>, rearrange the characters of
-<code>s</code> so that any two adjacent characters are not the same.</p>
-<p>Return <em>any possible rearrangement of</em> <code>s</code> <em>or
-return</em> <code>""</code> <em>if not possible</em> .</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="Reorganize-String"><a class="header-anchor" href="#Reorganize-String"></a><a target="_blank" rel="noopener" href="https://leetcode.com/problems/reorganize-string/description/">Reorganize String</a></h1>
+<h2 id="问题描述"><a class="header-anchor" href="#问题描述"></a>问题描述</h2>
+<p>Given a string <code>s</code>, rearrange the characters of <code>s</code> so that any two adjacent characters are not the same.</p>
+<p>Return <em>any possible rearrangement of</em> <code>s</code> <em>or return</em> <code>&quot;&quot;</code>  <em>if not possible</em> .</p>
 <p><strong>Example 1:</strong></p>
 <pre><strong>Input:</strong> s = &#34;aab&#34;
 <strong>Output:</strong> &#34;aba&#34;
@@ -230,9 +226,8 @@ return</em> <code>""</code> <em>if not possible</em> .</p>
 <p><strong>Example 2:</strong></p>
 <pre><strong>Input:</strong> s = &#34;aaab&#34;
 <strong>Output:</strong> &#34;&#34;</pre>
-<h3 id="解法一">解法一</h3>
+<h3 id="解法一"><a class="header-anchor" href="#解法一"></a>解法一</h3>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">reorganizeString</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">        count_s=&#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> s:</span><br><span class="line">            <span class="keyword">if</span> i <span class="keyword">not</span> <span class="keyword">in</span> count_s:</span><br><span class="line">                count_s[i]=<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                count_s[i]=count_s[i]+<span class="number">1</span></span><br><span class="line">        tol_len=<span class="built_in">len</span>(s)</span><br><span class="line">        <span class="keyword">if</span> <span class="number">2</span>*(<span class="built_in">max</span>(count_s.values())-<span class="number">1</span>) &gt;= tol_len:<span class="keyword">return</span> <span class="string">&quot;&quot;</span></span><br><span class="line">        l = [[k, v] <span class="keyword">for</span> k, v <span class="keyword">in</span> count_s.items()]</span><br><span class="line">        sorted_s = <span class="built_in">sorted</span>(l, key=<span class="keyword">lambda</span> x: x[<span class="number">1</span>], reverse=<span class="literal">True</span>)</span><br><span class="line">        k=<span class="number">0</span></span><br><span class="line">        out=[]                                                                                                       </span><br><span class="line">        <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(sorted_s[<span class="number">0</span>][<span class="number">1</span>]):</span><br><span class="line">            out.append(sorted_s[<span class="number">0</span>][<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="built_in">len</span>(sorted_s)):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(sorted_s[i][<span class="number">1</span>]):</span><br><span class="line">                out[k]=out[k]+sorted_s[i][<span class="number">0</span>]</span><br><span class="line">                k=k+<span class="number">1</span></span><br><span class="line">                <span class="keyword">if</span> k==sorted_s[<span class="number">0</span>][<span class="number">1</span>]:k=<span class="number">0</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;&#x27;</span>.join(out)</span><br></pre></td></tr></table></figure>
-
     </div>
 
     

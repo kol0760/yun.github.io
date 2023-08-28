@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"yun-iota.vercel.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":true,"height":100},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Regular Expression Matching 问题描述 You are given an integer array height of lengthn. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).  Find two">
+    <meta name="description" content="Regular Expression Matching 问题描述 You are given an intege">
 <meta property="og:type" content="article">
 <meta property="og:title" content="leetcode0011">
 <meta property="og:url" content="https://yun-iota.vercel.app/2023/07/04/leetcode0011/index.html">
 <meta property="og:site_name" content="ハウルの動く城">
-<meta property="og:description" content="Regular Expression Matching 问题描述 You are given an integer array height of lengthn. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).  Find two">
+<meta property="og:description" content="Regular Expression Matching 问题描述 You are given an intege">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s3-lc-upload.s3.amazonaws.com/uploads/2018/07/17/question_11.jpg">
 <meta property="article:published_time" content="2023-07-04T12:31:42.000Z">
@@ -116,8 +116,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#regular-expression-matching"><span class="nav-number">1.</span> <span class="nav-text">Regular
-Expression Matching</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%E9%94%99%E8%AF%AF%E8%A7%A3%E6%B3%95"><span class="nav-number">1.2.</span> <span class="nav-text">解法一：错误解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%E5%8F%8C%E6%8C%87%E9%92%88"><span class="nav-number">1.3.</span> <span class="nav-text">解法二：双指针</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Regular-Expression-Matching"><span class="nav-number">1.</span> <span class="nav-text">Regular Expression Matching</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%EF%BC%9A%E9%94%99%E8%AF%AF%E8%A7%A3%E6%B3%95"><span class="nav-number">1.2.</span> <span class="nav-text">解法一：错误解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%EF%BC%9A%E5%8F%8C%E6%8C%87%E9%92%88"><span class="nav-number">1.3.</span> <span class="nav-text">解法二：双指针</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -130,7 +129,7 @@ Expression Matching</span></a><ol class="nav-child"><li class="nav-item nav-leve
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -218,21 +217,15 @@ Expression Matching</span></a><ol class="nav-child"><li class="nav-item nav-leve
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="regular-expression-matching"><a target="_blank" rel="noopener" href="https://leetcode.com/problems/regular-expression-matching/">Regular
-Expression Matching</a></h1>
-<h2 id="问题描述">问题描述</h2>
-<p>You are given an integer array <code>height</code> of length
-<code>n</code>. There are <code>n</code> vertical lines drawn such that
-the two endpoints of the <code>i&lt;sup&gt;th&lt;/sup&gt;</code> line
-are <code>(i, 0)</code> and <code>(i, height[i])</code>.</p>
-<p>Find two lines that together with the x-axis form a container, such
-that the container contains the most water.</p>
-<p>Return <em>the maximum amount of water a container can store</em>
-.</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="Regular-Expression-Matching"><a class="header-anchor" href="#Regular-Expression-Matching"></a><a target="_blank" rel="noopener" href="https://leetcode.com/problems/regular-expression-matching/">Regular Expression Matching</a></h1>
+<h2 id="问题描述"><a class="header-anchor" href="#问题描述"></a>问题描述</h2>
+<p>You are given an integer array <code>height</code> of length <code>n</code>. There are <code>n</code> vertical lines drawn such that the two endpoints of the <code>i&lt;sup&gt;th&lt;/sup&gt;</code> line are <code>(i, 0)</code> and <code>(i, height[i])</code>.</p>
+<p>Find two lines that together with the x-axis form a container, such that the container contains the most water.</p>
+<p>Return  <em>the maximum amount of water a container can store</em> .</p>
 <p><strong>Notice</strong> that you may not slant the container.</p>
-<strong>Example 1:</strong>
-<div data-align="center">
-<p><img src="https://s3-lc-upload.s3.amazonaws.com/uploads/2018/07/17/question_11.jpg" width="80%"></p>
+<p><strong>Example 1:</strong></p>
+<div align="center">
+<img src="https://s3-lc-upload.s3.amazonaws.com/uploads/2018/07/17/question_11.jpg" width="80%">
 </div>
 <pre><strong>Input:</strong> height = [1,8,6,2,5,4,8,3,7]
 <strong>Output:</strong> 49
@@ -241,86 +234,124 @@ that the container contains the most water.</p>
 <p><strong>Example 2:</strong></p>
 <pre><strong>Input:</strong> height = [1,1]
 <strong>Output:</strong> 1</pre>
-<h2 id="解法一错误解法">解法一：错误解法</h2>
-<p>这个解法就是很没脑子，直接按照题目条件嘛，两层循环，一直计算面积，其中面积的计算公式是<code>(j-i)*min(height[i],height[j])</code>，这个解法唯一的意义就是这个了。
+<h2 id="解法一：错误解法"><a class="header-anchor" href="#解法一：错误解法"></a>解法一：错误解法</h2>
+<p>这个解法就是很没脑子，直接按照题目条件嘛，两层循环，一直计算面积，其中面积的计算公式是<code>(j-i)*min(height[i],height[j])</code>，这个解法唯一的意义就是这个了。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxArea</span>(<span class="params">self, height: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        maxarea=<span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(height)):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(height)):</span><br><span class="line">                maxarea=<span class="built_in">max</span>(maxarea,((j-i)*<span class="built_in">min</span>(height[i],height[j])))</span><br><span class="line">        <span class="keyword">return</span> maxarea</span><br></pre></td></tr></table></figure>
-问题在于复杂度太高，而且可以预想的是，存在很多没意义的计算过程，耗时大，不做评价。</p>
-<h2 id="解法二双指针">解法二：双指针</h2>
-<p>双指针确实是个好东西，这个解法的思想核心就是，左右定义两个边界，然后两个边界逐步逼近，这种解法可以极大的降低复杂度。
-&gt;首先左边界定义为0，右边界则为len(height) -
-1。计算一个初始的最大面积。ok，那么接下来，开始逼近，具体操作就是选择高更低的那边移动。例如，左边界的高是3，右边界的高是1，那么移动的就是右边界，右边界向左移动，right
--= 1，反之left += 1。循环的条件是左边界始终小于右边界。</p>
-<p>Ok，那么接下来就是代码实现。 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxArea</span>(<span class="params">self, height: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        left = <span class="number">0</span></span><br><span class="line">        right = <span class="built_in">len</span>(height) - <span class="number">1</span></span><br><span class="line">        maxarea = (right - left) * <span class="built_in">min</span>(height[left], height[right])</span><br><span class="line">        <span class="keyword">while</span> left &lt; right:</span><br><span class="line">            <span class="keyword">if</span> height[left] &lt; height[right]:</span><br><span class="line">                left += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                right -= <span class="number">1</span></span><br><span class="line">            maxarea = <span class="built_in">max</span>(maxarea, (right - left) * <span class="built_in">min</span>(height[left], height[right]))</span><br><span class="line">        <span class="comment">##只有让更矮的往中间移动才有可能面积增大</span></span><br><span class="line">        <span class="keyword">return</span> maxarea</span><br></pre></td></tr></table></figure>
-这里我特地写了“只有让更矮的往中间移动才有可能面积增大”，说实话这个理解起来其实是有点难度的。我一开始的判断条件并不是高，而是假设移动后的面积。
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> height[left] &lt; height[right]:</span><br></pre></td></tr></table></figure> 被我替换成 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (right-left-<span class="number">1</span>)*<span class="built_in">min</span>(height[left+<span class="number">1</span>],height[right]) &gt; maxarea:</span><br></pre></td></tr></table></figure>
-可以看到，我这里是默认左边界右移，如果面积增大，那就右移，否则左移。这种解法会出现一个问题。
-[1,2,3,4,5,25,24,3,4] 这里我用这个表格来距离 | 左边界 | 右边界 | 距离 |
-面积 | | :----: | :----: | :--: | :--: | | 1 | 4 | 8 | 8 | | 2 | 4 | 7 |
-14 | | 3 | 4 | 6 | 18 | | 4 | 4 | 5 | 20 |</p>
-<p>注意，这个时候的最大值一直是20，只移动左边界一次会导致面积变小，导致有边界移动了，这就是问题所在。</p>
+<p>问题在于复杂度太高，而且可以预想的是，存在很多没意义的计算过程，耗时大，不做评价。</p>
+<h2 id="解法二：双指针"><a class="header-anchor" href="#解法二：双指针"></a>解法二：双指针</h2>
+<p>双指针确实是个好东西，这个解法的思想核心就是，左右定义两个边界，然后两个边界逐步逼近，这种解法可以极大的降低复杂度。</p>
+<blockquote>
+<p>首先左边界定义为0，右边界则为len(height) - 1。计算一个初始的最大面积。ok，那么接下来，开始逼近，具体操作就是选择高更低的那边移动。例如，左边界的高是3，右边界的高是1，那么移动的就是右边界，右边界向左移动，right -= 1，反之left += 1。循环的条件是左边界始终小于右边界。</p>
+</blockquote>
+<p>Ok，那么接下来就是代码实现。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxArea</span>(<span class="params">self, height: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        left = <span class="number">0</span></span><br><span class="line">        right = <span class="built_in">len</span>(height) - <span class="number">1</span></span><br><span class="line">        maxarea = (right - left) * <span class="built_in">min</span>(height[left], height[right])</span><br><span class="line">        <span class="keyword">while</span> left &lt; right:</span><br><span class="line">            <span class="keyword">if</span> height[left] &lt; height[right]:</span><br><span class="line">                left += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                right -= <span class="number">1</span></span><br><span class="line">            maxarea = <span class="built_in">max</span>(maxarea, (right - left) * <span class="built_in">min</span>(height[left], height[right]))</span><br><span class="line">        <span class="comment">##只有让更矮的往中间移动才有可能面积增大</span></span><br><span class="line">        <span class="keyword">return</span> maxarea</span><br></pre></td></tr></table></figure>
+<p>这里我特地写了“只有让更矮的往中间移动才有可能面积增大”，说实话这个理解起来其实是有点难度的。我一开始的判断条件并不是高，而是假设移动后的面积。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> height[left] &lt; height[right]:</span><br></pre></td></tr></table></figure>
+<p>被我替换成</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (right-left-<span class="number">1</span>)*<span class="built_in">min</span>(height[left+<span class="number">1</span>],height[right]) &gt; maxarea:</span><br></pre></td></tr></table></figure>
+<p>可以看到，我这里是默认左边界右移，如果面积增大，那就右移，否则左移。这种解法会出现一个问题。<br>
+[1,2,3,4,5,25,24,3,4]<br>
+这里我用这个表格来距离</p>
 <table>
 <thead>
-<tr class="header">
-<th style="text-align: center;">左边界</th>
-<th style="text-align: center;">右边界</th>
-<th style="text-align: center;">距离</th>
-<th style="text-align: center;">面积</th>
+<tr>
+<th style="text-align:center">左边界</th>
+<th style="text-align:center">右边界</th>
+<th style="text-align:center">距离</th>
+<th style="text-align:center">面积</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">16</td>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">8</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;">不</td>
-<td style="text-align: center;">符</td>
-<td style="text-align: center;">合</td>
-<td style="text-align: center;"></td>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">14</td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">12</td>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">18</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;">不</td>
-<td style="text-align: center;">符</td>
-<td style="text-align: center;">合</td>
-<td style="text-align: center;"></td>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">20</td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">9</td>
+</tbody>
+</table>
+<p>注意，这个时候的最大值一直是20，只移动左边界一次会导致面积变小，导致有边界移动了，这就是问题所在。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">左边界</th>
+<th style="text-align:center">右边界</th>
+<th style="text-align:center">距离</th>
+<th style="text-align:center">面积</th>
 </tr>
-<tr class="even">
-<td style="text-align: center;">不</td>
-<td style="text-align: center;">符</td>
-<td style="text-align: center;">合</td>
-<td style="text-align: center;"></td>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">16</td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">24</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">12</td>
+<tr>
+<td style="text-align:center">不</td>
+<td style="text-align:center">符</td>
+<td style="text-align:center">合</td>
+<td style="text-align:center"></td>
 </tr>
-<tr class="even">
-<td style="text-align: center;">不</td>
-<td style="text-align: center;">符</td>
-<td style="text-align: center;">合</td>
-<td style="text-align: center;"></td>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">12</td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">25</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">8</td>
+<tr>
+<td style="text-align:center">不</td>
+<td style="text-align:center">符</td>
+<td style="text-align:center">合</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">9</td>
+</tr>
+<tr>
+<td style="text-align:center">不</td>
+<td style="text-align:center">符</td>
+<td style="text-align:center">合</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">24</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">12</td>
+</tr>
+<tr>
+<td style="text-align:center">不</td>
+<td style="text-align:center">符</td>
+<td style="text-align:center">合</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">25</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">8</td>
 </tr>
 </tbody>
 </table>

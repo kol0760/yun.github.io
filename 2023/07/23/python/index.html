@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"yun-iota.vercel.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":true,"height":100},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="List用法  count 统计在List中是否出现某个字符，返回出现次数 index 返回统计的坐标，只能返回第一个  元组 ()  元组类似列表，元组里面的元素也是进行索引计算。列表里面的元素的值可以修改，而元组里面的元素的值不能修改，只能读取。元组的符号是()。  集合 {} Python中集合主要有两个功能，一个功能是进行集合操作，另一个功能是消除重复元素。 集合的格式是：set()，其中">
+    <meta name="description" content="List用法 count 统计在List中是否出现某个字符，返回出现次数 index 返回统计的坐标，只能返回第一个 元组 () 元组类似列表，元组里面的元素也是进行索引计算。列表里面的元素的值可以修改，而元组里面的元素的值不能修改，只能读取。元组的符号是()。 集合 {} Python中集合主要有两个功能，一个功能是进行集合操作，另一个功能是消除重复元素。 集合的格式是：set()，其中()内可">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python">
 <meta property="og:url" content="https://yun-iota.vercel.app/2023/07/23/python/index.html">
 <meta property="og:site_name" content="ハウルの動く城">
-<meta property="og:description" content="List用法  count 统计在List中是否出现某个字符，返回出现次数 index 返回统计的坐标，只能返回第一个  元组 ()  元组类似列表，元组里面的元素也是进行索引计算。列表里面的元素的值可以修改，而元组里面的元素的值不能修改，只能读取。元组的符号是()。  集合 {} Python中集合主要有两个功能，一个功能是进行集合操作，另一个功能是消除重复元素。 集合的格式是：set()，其中">
+<meta property="og:description" content="List用法 count 统计在List中是否出现某个字符，返回出现次数 index 返回统计的坐标，只能返回第一个 元组 () 元组类似列表，元组里面的元素也是进行索引计算。列表里面的元素的值可以修改，而元组里面的元素的值不能修改，只能读取。元组的符号是()。 集合 {} Python中集合主要有两个功能，一个功能是进行集合操作，另一个功能是消除重复元素。 集合的格式是：set()，其中()内可">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-07-23T10:21:15.000Z">
 <meta property="article:modified_time" content="2023-08-22T16:09:39.133Z">
@@ -124,7 +124,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -204,23 +204,25 @@
     
     
     <div class="post-body" itemprop="articleBody"><p>List用法</p>
-<p>count 统计在List中是否出现某个字符，返回出现次数 index
-返回统计的坐标，只能返回第一个</p>
+<p>count 统计在List中是否出现某个字符，返回出现次数<br>
+index 返回统计的坐标，只能返回第一个</p>
 <p>元组 ()</p>
 <p>元组类似列表，元组里面的元素也是进行索引计算。列表里面的元素的值可以修改，而元组里面的元素的值不能修改，只能读取。元组的符号是()。</p>
-<p>集合 {}
-Python中集合主要有两个功能，一个功能是进行集合操作，另一个功能是消除重复元素。
-集合的格式是：set()，其中()内可以是列表、字典或字符串，因为字符串是以列表的形式存储</p>
+<p>集合 {}<br>
+Python中集合主要有两个功能，一个功能是进行集合操作，另一个功能是消除重复元素。 集合的格式是：set()，其中()内可以是列表、字典或字符串，因为字符串是以列表的形式存储</p>
 <p>集合可以用add，remove操作</p>
 <p>格式化输入</p>
-<p>name=input("Name:")</p>
+<p>name=input(“Name:”)</p>
 <p>list与字典的转化</p>
-<p>新建一个值为None的字典 nums = [2, 2, 1, 1, 1, 2, 2, 3, 3, 5, 6, 5]
+<p>新建一个值为None的字典<br>
+nums = [2, 2, 1, 1, 1, 2, 2, 3, 3, 5, 6, 5]<br>
 num_counts = dict()</p>
 <p>dict(zip(a,b))</p>
-<p>两个list合成dict <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">    <span class="keyword">if</span> num <span class="keyword">in</span> num_counts:</span><br><span class="line">        num_counts[num] += <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        num_counts[num] = <span class="number">1</span></span><br></pre></td></tr></table></figure>
-新建一个空的字典num_counts，按照list中出现的次数来新建dict,keys就是list的值，value则是出现的次数
-In: {num_counts Out: {2: 4, 1: 3, 3: 2, 5: 2, 6: 1}</p>
+<p>两个list合成dict</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">    <span class="keyword">if</span> num <span class="keyword">in</span> num_counts:</span><br><span class="line">        num_counts[num] += <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        num_counts[num] = <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>新建一个空的字典num_counts，按照list中出现的次数来新建dict,keys就是list的值，value则是出现的次数<br>
+In: {num_counts<br>
+Out: {2: 4, 1: 3, 3: 2, 5: 2, 6: 1}</p>
 <p>字典的操作</p>
 
     </div>

@@ -122,7 +122,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -150,114 +150,6 @@
     </div>
 
     <div class="main-inner index posts-expand">
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://yun-iota.vercel.app/2023/07/29/math001/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="yun">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ハウルの動く城">
-      <meta itemprop="description" content="ハウルの動く城は、魔法使いのハウルと呪いで老婆になった少女ソフィーの冒険と恋を描いたアニメーション映画です。ソフィーはハウルの動く城に住み込み、掃除婦として彼と仲良くなりますが、戦争や魔法使いのサリマンや荒地の魔女などの脅威に直面します。ソフィーはハウルの心臓を守るために奮闘し、自分も呪いから解放されます。最後にはハウルと愛を確かめ合い、新しい城で幸せに暮らします。">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | ハウルの動く城">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/07/29/math001/" class="post-title-link" itemprop="url">数学杂谈001</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-07-29 19:56:13" itemprop="dateCreated datePublished" datetime="2023-07-29T19:56:13+08:00">2023-07-29</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/math/" itemprop="url" rel="index"><span itemprop="name">math</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          这里讲一个很有意思的问题，这个问题是我在逛知乎的时候偶然看到的。题目的内容如下图，它给人一种人畜无害的错觉，第一眼可能觉得很简单，细想就发现了不对劲。
-
-
-
-这是一个很有意思的题目，因为它给人一种人畜无害的错觉，第一眼可能觉得很简单，细想就发现了不对劲。
-
-这里首先给出一种数值解法，或者说python模拟的。 1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-
-
-from tqdm import tqdm
-import math
-import random
-tol_dis=0
-for _ in tqdm(range(100000)):
-  a=[random.random(),random.rando
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/07/29/math001/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
 
     
 
@@ -318,20 +210,13 @@ for _ in tqdm(range(100000)):
     
     
     <div class="post-body" itemprop="articleBody">
-          GROMACS Tutorial
-
-
-
-Defining the Unit Cell
-1
-2
-
-
-gmx editconf -f complex.gro -o newbox.gro -bt dodecahedron -d 1.0
-gmx solvate -cp newbox.gro -cs spc216.gro -p topol.top -o solv.gro
-
-
-In GROMACS, both the dodecahedron and theoctahedron are special cases of triclinic unit cells, which are the most ge
+          <h1 id="gromacs-tutorial">GROMACS Tutorial</h1>
+<hr>
+<p>:)</p>
+<p>can[^1]</p>
+<p>++1++</p>
+<h2 id="defining-the-unit-cell">Defining the Unit Cell</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/07/23/MD/#more" rel="contents">
@@ -416,14 +301,11 @@ In GROMACS, both the dodecahedron and theoctahedron are special cases of triclin
     
     
     <div class="post-body" itemprop="articleBody">
-          研究方法介绍
-1 量子化学
-1.1密度泛函理论
-薛定谔方程（Schrödinger equation）是量子力学中用于描述体系的量子态随时间变化的一个偏微分方程。 其中，最广义形式含时的薛定谔方程如所示。 \[ \hat{H} \Psi=i \hbar \frac{\partial}{\partial t} \Psi \] 其中，\(\hat{H}\)是表征波函数总能量的哈密顿算符，\(\Psi\)是物理系统的波函数，\(i\)是虚数单位，\(\hbar\)是约化普朗克常数，\(\frac{\partial}{\partial t}\)是对于时间的偏微分。
-
-1.2过渡态理论
-2 分子对接
-分
+          <h1 id="研究方法介绍"><a class="header-anchor" href="#研究方法介绍"></a>研究方法介绍</h1>
+<h2 id="1-量子化学"><a class="header-anchor" href="#1-量子化学"></a>1 量子化学</h2>
+<h3 id="1-1密度泛函理论"><a class="header-anchor" href="#1-1密度泛函理论"></a>1.1密度泛函理论</h3>
+<p>薛定谔方程（Schrödinger equation）是量子力学中用于描述体系的量子态随时间变化的一个偏微分方程。<br>
+其中，最广义形式含时
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/07/23/gmxMMPBSA/#more" rel="contents">
@@ -499,25 +381,15 @@ In GROMACS, both the dodecahedron and theoctahedron are special cases of triclin
     
     
     <div class="post-body" itemprop="articleBody">
-          List用法
-
-count 统计在List中是否出现某个字符，返回出现次数 index 返回统计的坐标，只能返回第一个
-
-元组 ()
-
-元组类似列表，元组里面的元素也是进行索引计算。列表里面的元素的值可以修改，而元组里面的元素的值不能修改，只能读取。元组的符号是()。
-
-集合 {} Python中集合主要有两个功能，一个功能是进行集合操作，另一个功能是消除重复元素。 集合的格式是：set()，其中()内可以是列表、字典或字符串，因为字符串是以列表的形式存储
-
-集合可以用add，remove操作
-
-格式化输入
-
-name=input("Name:")
-
-list与字典的转化
-
-新建一个值为Non
+          <p>List用法</p>
+<p>count 统计在List中是否出现某个字符，返回出现次数<br>
+index 返回统计的坐标，只能返回第一个</p>
+<p>元组 ()</p>
+<p>元组类似列表，元组里面的元素也是进行索引计算。列表里面的元素的值可以修改，而元组里面的元素的值不能修改，只能读取。元组的符号是()。</p>
+<p>集合 {}<br>
+Python中集合主要有两个功能，一个功能是进行集合操作，另一个功能是消除重复元素。 集合的格式是：set()，其中()内可以是列表、字典或字符串，因为字符串是以列表的形式存储</p>
+<p>集合可以用add，remove操作</p>
+<p>格式
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/07/23/python/#more" rel="contents">
@@ -602,17 +474,9 @@ list与字典的转化
     
     
     <div class="post-body" itemprop="articleBody">
-          16. 3Sum Closest
-问题描述
-Given an integer array nums of length n and an integer target, find three integers in numssuch that the sum is closest to target.
-
-Return the sum of the three integers .
-
-You may assume that each input would have exactly one solution.
-
-Example 1:
-
-Input: nums = [-1,2,1,-4], tar
+          <h1 id="16-3Sum-Closest"><a class="header-anchor" href="#16-3Sum-Closest"></a><a target="_blank" rel="noopener" href="https://leetcode.com/problems/3sum-closest/">16. 3Sum Closest</a></h1>
+<h2 id="问题描述"><a class="header-anchor" href="#问题描述"></a>问题描述</h2>
+<p>Given an integer array <code>nums</code> of length <code>n</code> and an 
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/07/06/leetcode0016/#more" rel="contents">
@@ -697,16 +561,9 @@ Input: nums = [-1,2,1,-4], tar
     
     
     <div class="post-body" itemprop="articleBody">
-          15. 3Sum
-问题描述
-Given an integer array nums, return all the triplets[nums[i], nums[j], nums[k]] such that i != j,i != k, and j != k, andnums[i] + nums[j] + nums[k] == 0.
-
-Notice that the solution set must not contain duplicate triplets.
-
-Example 1:
-
-Input: nums = [-1,0,1,2,-1,-4]
-Output: [[-1,-1,2],[
+          <h1 id="15-3Sum"><a class="header-anchor" href="#15-3Sum"></a><a target="_blank" rel="noopener" href="https://leetcode.com/problems/3sum/description/">15. 3Sum</a></h1>
+<h2 id="问题描述"><a class="header-anchor" href="#问题描述"></a>问题描述</h2>
+<p>Given an integer array nums, return all the triplets <code>[nums[i], nums[j], nums[k]]</code>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/07/05/leetcode0015/#more" rel="contents">
@@ -791,22 +648,9 @@ Output: [[-1,-1,2],[
     
     
     <div class="post-body" itemprop="articleBody">
-          14. Longest Common Prefix
-问题描述
-Write a function to find the longest common prefix string amongst an array of strings.
-
-If there is no common prefix, return an empty string"".
-
-Example 1:
-
-Input: strs = ["flower","flow","flight"]
-Output: "fl"
-
-
-Example 2:
-
-Input: strs = ["dog","racecar","car"]
-Out
+          <h1 id="14-Longest-Common-Prefix"><a class="header-anchor" href="#14-Longest-Common-Prefix"></a><a target="_blank" rel="noopener" href="https://leetcode.com/problems/longest-common-prefix/">14. Longest Common Prefix</a></h1>
+<h2 id="问题描述"><a class="header-anchor" href="#问题描述"></a>问题描述</h2>
+<p>Write a function to find the longest 
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/07/05/leetcode0014/#more" rel="contents">
@@ -891,20 +735,9 @@ Out
     
     
     <div class="post-body" itemprop="articleBody">
-          13. Roman to Integer
-问题描述
-Roman numerals are represented by seven different symbols:I, V, X, L,C, D and M.
-
-Symbol       Value
-I             1
-V             5
-X             10
-L             50
-C             100
-D             500
-M             1000
-
-For example, 2 is written as II in Roman num
+          <h1 id="13-Roman-to-Integer"><a class="header-anchor" href="#13-Roman-to-Integer"></a><a target="_blank" rel="noopener" href="https://leetcode.com/problems/roman-to-integer/">13. Roman to Integer</a></h1>
+<h2 id="问题描述"><a class="header-anchor" href="#问题描述"></a>问题描述</h2>
+<p>Roman numerals are represented by seven different symbols
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/07/05/leetcode0013/#more" rel="contents">
@@ -989,20 +822,9 @@ For example, 2 is written as II in Roman num
     
     
     <div class="post-body" itemprop="articleBody">
-          12. Integer to Roman
-问题描述
-Roman numerals are represented by seven different symbols:I, V, X, L,C, D and M.
-
-Symbol       Value
-I             1
-V             5
-X             10
-L             50
-C             100
-D             500
-M             1000
-
-For example, 2 is written as II in Roman num
+          <h1 id="12-Integer-to-Roman"><a class="header-anchor" href="#12-Integer-to-Roman"></a><a target="_blank" rel="noopener" href="https://leetcode.com/problems/integer-to-roman/">12. Integer to Roman</a></h1>
+<h2 id="问题描述"><a class="header-anchor" href="#问题描述"></a>问题描述</h2>
+<p>Roman numerals are represented by seven different symbols
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/07/04/leetcode0012/#more" rel="contents">
@@ -1087,14 +909,99 @@ For example, 2 is written as II in Roman num
     
     
     <div class="post-body" itemprop="articleBody">
-          Regular Expression Matching
-问题描述
-You are given an integer array height of lengthn. There are n vertical lines drawn such that the two endpoints of the i<sup>th</sup> line are (i, 0) and (i, height[i]).
-
-Find two lines that together with the x-axis form a container, such that the container contains t
+          <h1 id="Regular-Expression-Matching"><a class="header-anchor" href="#Regular-Expression-Matching"></a><a target="_blank" rel="noopener" href="https://leetcode.com/problems/regular-expression-matching/">Regular Expression Matching</a></h1>
+<h2 id="问题描述"><a class="header-anchor" href="#问题描述"></a>问题描述</h2>
+<p>You are given an intege
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/07/04/leetcode0011/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://yun-iota.vercel.app/2023/07/04/leetcode0010/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="yun">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ハウルの動く城">
+      <meta itemprop="description" content="ハウルの動く城は、魔法使いのハウルと呪いで老婆になった少女ソフィーの冒険と恋を描いたアニメーション映画です。ソフィーはハウルの動く城に住み込み、掃除婦として彼と仲良くなりますが、戦争や魔法使いのサリマンや荒地の魔女などの脅威に直面します。ソフィーはハウルの心臓を守るために奮闘し、自分も呪いから解放されます。最後にはハウルと愛を確かめ合い、新しい城で幸せに暮らします。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | ハウルの動く城">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/07/04/leetcode0010/" class="post-title-link" itemprop="url">leetcode0010</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-07-04 19:35:42" itemprop="dateCreated datePublished" datetime="2023-07-04T19:35:42+08:00">2023-07-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Regular-Expression-Matching"><a class="header-anchor" href="#Regular-Expression-Matching"></a><a target="_blank" rel="noopener" href="https://leetcode.com/problems/regular-expression-matching/">Regular Expression Matching</a></h1>
+<h2 id="问题描述"><a class="header-anchor" href="#问题描述"></a>问题描述</h2>
+<p>Given an input string
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/07/04/leetcode0010/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
