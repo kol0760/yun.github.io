@@ -23,11 +23,11 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="leetcode0020">
 <meta property="og:url" content="https://yun-iota.vercel.app/2023/08/28/leetcode0020/index.html">
-<meta property="og:site_name" content="ハウルの動く城">
+<meta property="og:site_name" content="无崖子">
 <meta property="og:description" content="20. Valid Parentheses 问题描述 Given a string s containing just the characters &#39;(&#39;, &#39;)&#39;, &#39;&amp;#123;&#39;, &#39;&amp;#125;&#39;, &#39;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-08-28T05:40:22.000Z">
-<meta property="article:modified_time" content="2023-08-28T06:00:43.466Z">
+<meta property="article:modified_time" content="2023-08-28T11:54:03.088Z">
 <meta property="article:author" content="yun">
 <meta property="article:tag" content="leetcode">
 <meta property="article:tag" content="python">
@@ -41,7 +41,7 @@
 <script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://yun-iota.vercel.app/2023/08/28/leetcode0020/","path":"2023/08/28/leetcode0020/","title":"leetcode0020"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>leetcode0020 | ハウルの動く城</title>
+<title>leetcode0020 | 无崖子</title>
   
 
 
@@ -74,10 +74,10 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <p class="site-title">ハウルの動く城</p>
+      <p class="site-title">无崖子</p>
       <i class="logo-line"></i>
     </a>
-      <p class="site-subtitle" itemprop="description">ハウルの動く城</p>
+      <p class="site-subtitle" itemprop="description">无崖子</p>
   </div>
 
   <div class="site-nav-right">
@@ -122,13 +122,13 @@ Parentheses</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a 
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">yun</p>
-  <div class="site-description" itemprop="description">ハウルの動く城は、魔法使いのハウルと呪いで老婆になった少女ソフィーの冒険と恋を描いたアニメーション映画です。ソフィーはハウルの動く城に住み込み、掃除婦として彼と仲良くなりますが、戦争や魔法使いのサリマンや荒地の魔女などの脅威に直面します。ソフィーはハウルの心臓を守るために奮闘し、自分も呪いから解放されます。最後にはハウルと愛を確かめ合い、新しい城で幸せに暮らします。</div>
+  <div class="site-description" itemprop="description">吾生也有涯，而知也无涯。 以有涯随无涯，殆已！</div>
 </div>
 <div class="site-state-wrap animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -139,7 +139,7 @@ Parentheses</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a 
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -174,12 +174,12 @@ Parentheses</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a 
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ハウルの動く城">
-      <meta itemprop="description" content="ハウルの動く城は、魔法使いのハウルと呪いで老婆になった少女ソフィーの冒険と恋を描いたアニメーション映画です。ソフィーはハウルの動く城に住み込み、掃除婦として彼と仲良くなりますが、戦争や魔法使いのサリマンや荒地の魔女などの脅威に直面します。ソフィーはハウルの心臓を守るために奮闘し、自分も呪いから解放されます。最後にはハウルと愛を確かめ合い、新しい城で幸せに暮らします。">
+      <meta itemprop="name" content="无崖子">
+      <meta itemprop="description" content="吾生也有涯，而知也无涯。 以有涯随无涯，殆已！">
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="leetcode0020 | ハウルの動く城">
+      <meta itemprop="name" content="leetcode0020 | 无崖子">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
@@ -247,9 +247,11 @@ type.</li>
 <strong>这是不合理的</strong> ([)],[])
 </pre>
 <h2 id="解法一">解法一</h2>
-<p>那么解决这种题目的核心关键方法就是，使用栈。 &gt;堆栈的基本特点：
-&gt;1. 先入后出，后入先出。 &gt;2.
+<p>那么解决这种题目的核心关键方法就是，使用栈。</p>
+<blockquote>
+<p>堆栈的基本特点： 1. 先入后出，后入先出。 2.
 除头尾节点之外，每个元素有一个前驱，一个后继。</p>
+</blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isValid</span>(<span class="params">self, s</span>):</span><br><span class="line">        stack = [] <span class="comment"># only use append and pop</span></span><br><span class="line">        pairs = &#123;</span><br><span class="line">            <span class="string">&#x27;(&#x27;</span>: <span class="string">&#x27;)&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;&#123;&#x27;</span>: <span class="string">&#x27;&#125;&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;[&#x27;</span>: <span class="string">&#x27;]&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> bracket <span class="keyword">in</span> s:</span><br><span class="line">            <span class="keyword">if</span> bracket <span class="keyword">in</span> pairs:</span><br><span class="line">                stack.append(bracket)</span><br><span class="line">            <span class="keyword">elif</span> <span class="built_in">len</span>(stack) == <span class="number">0</span> <span class="keyword">or</span> bracket != pairs[stack.pop()]:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(stack) == <span class="number">0</span></span><br></pre></td></tr></table></figure>
 <p>对字符串进行一个循环，每次遇到一个括号，首先检查它是不是左括号的类型，如果是，则将其入栈。当遇到右括号的时候，就开始检查，这个右括号与栈顶的左括号所对应的右括号是否相等。注意这个地方用的是pop，也就是说，栈顶的左括号同时被移出。
 这里以<code>(&#123;&#125;)</code>和<code>([)]</code>为例。</p>
