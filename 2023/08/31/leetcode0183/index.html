@@ -19,29 +19,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"yun-iota.vercel.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":true,"height":100},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Palindrome Number 问题描述 Given an integer x, return true if x is palindrome , and false otherwis">
+    <meta name="description" content="Customers Who Never Order 问题描述  Customers   Column Name">
 <meta property="og:type" content="article">
-<meta property="og:title" content="leetcode0009">
-<meta property="og:url" content="https://yun-iota.vercel.app/2023/07/04/leetcode0009/index.html">
+<meta property="og:title" content="leetcode0183">
+<meta property="og:url" content="https://yun-iota.vercel.app/2023/08/31/leetcode0183/index.html">
 <meta property="og:site_name" content="无崖子">
-<meta property="og:description" content="Palindrome Number 问题描述 Given an integer x, return true if x is palindrome , and false otherwis">
+<meta property="og:description" content="Customers Who Never Order 问题描述  Customers   Column Name">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-07-04T10:01:22.000Z">
-<meta property="article:modified_time" content="2023-08-25T03:20:09.738Z">
+<meta property="article:published_time" content="2023-08-31T12:34:05.000Z">
+<meta property="article:modified_time" content="2023-09-05T08:28:53.594Z">
 <meta property="article:author" content="yun">
 <meta property="article:tag" content="leetcode">
 <meta property="article:tag" content="python">
+<meta property="article:tag" content="pandas">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://yun-iota.vercel.app/2023/07/04/leetcode0009/">
+<link rel="canonical" href="https://yun-iota.vercel.app/2023/08/31/leetcode0183/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://yun-iota.vercel.app/2023/07/04/leetcode0009/","path":"2023/07/04/leetcode0009/","title":"leetcode0009"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://yun-iota.vercel.app/2023/08/31/leetcode0183/","path":"2023/08/31/leetcode0183/","title":"leetcode0183"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>leetcode0009 | 无崖子</title>
+<title>leetcode0183 | 无崖子</title>
   
 
 
@@ -113,8 +114,8 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#palindrome-number"><span class="nav-number">1.</span> <span class="nav-text">Palindrome
-Number</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80"><span class="nav-number">1.2.</span> <span class="nav-text">解法一</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#customers-who-never-order"><span class="nav-number">1.</span> <span class="nav-text">Customers
+Who Never Order</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80"><span class="nav-number">1.2.</span> <span class="nav-text">解法一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C"><span class="nav-number">1.3.</span> <span class="nav-text">解法二</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -165,7 +166,7 @@ Number</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://yun-iota.vercel.app/2023/07/04/leetcode0009/">
+    <link itemprop="mainEntityOfPage" href="https://yun-iota.vercel.app/2023/08/31/leetcode0183/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -178,12 +179,12 @@ Number</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="leetcode0009 | 无崖子">
+      <meta itemprop="name" content="leetcode0183 | 无崖子">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          leetcode0009
+          leetcode0183
         </h1>
 
         <div class="post-meta-container">
@@ -194,7 +195,7 @@ Number</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2023-07-04 18:01:22" itemprop="dateCreated datePublished" datetime="2023-07-04T18:01:22+08:00">2023-07-04</time>
+      <time title="创建时间：2023-08-31 20:34:05" itemprop="dateCreated datePublished" datetime="2023-08-31T20:34:05+08:00">2023-08-31</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -215,37 +216,123 @@ Number</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="palindrome-number"><a target="_blank" rel="noopener" href="https://leetcode.com/problems/palindrome-number/">Palindrome
-Number</a></h1>
+    <div class="post-body" itemprop="articleBody"><h1 id="customers-who-never-order"><a target="_blank" rel="noopener" href="https://leetcode.com/problems/customers-who-never-order">Customers
+Who Never Order</a></h1>
 <h2 id="问题描述">问题描述</h2>
-<p>Given an integer <code>x</code>, return <code>true</code> if
-<code>x</code> is <strong>palindrome</strong> , and
-<em><code>false</code></em> <em>otherwise</em> .</p>
+<table>
+<caption><code>Customers</code></caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Column Name</th>
+<th style="text-align: center;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">id</td>
+<td style="text-align: center;">int</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">name</td>
+<td style="text-align: center;">varchar</td>
+</tr>
+</tbody>
+</table>
+<p>id is the primary key (column with unique values) for this table.
+Each row of this table indicates the ID and name of a customer.</p>
+<table>
+<caption><code>Orders</code></caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Column Name</th>
+<th style="text-align: center;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">id</td>
+<td style="text-align: center;">int</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">customerId</td>
+<td style="text-align: center;">int</td>
+</tr>
+</tbody>
+</table>
+<p>id is the primary key (column with unique values) for this table.
+customerId is a foreign key (reference columns) of the ID from the
+Customers table. Each row of this table indicates the ID of an order and
+the ID of the customer who ordered it.</p>
+<p>Write a solution to find all customers who never order anything.</p>
+<p>Return the result table in <strong>any order</strong> .</p>
+<p>The result format is in the following example.</p>
 <p><strong>Example 1:</strong></p>
-<pre><strong>Input:</strong> x = 121
-<strong>Output:</strong> true
-<strong>Explanation:</strong> 121 reads as 121 from left to right and from right to left.
-</pre>
-<p><strong>Example 2:</strong></p>
-<pre><strong>Input:</strong> x = -121
-<strong>Output:</strong> false
-<strong>Explanation:</strong> From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
-</pre>
-<p><strong>Example 3:</strong></p>
-<pre><strong>Input:</strong> x = 10
-<strong>Output:</strong> false
-<strong>Explanation:</strong> Reads 01 from right to left. Therefore it is not a palindrome.</pre>
-<p>判断一个数字是否是回文数字。这个题目，感觉会做 <a target="_blank" rel="noopener" href="https://leetcode.com/problems/longest-palindromic-substring/">Longest
-Palindromic Substring</a> 的人就已经会做这题了。</p>
+<p><code>Customers table:</code></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">id</th>
+<th style="text-align: center;">name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Joe</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">Henry</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">Sam</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">Max</td>
+</tr>
+</tbody>
+</table>
+<p><code>Orders table:</code></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">id</th>
+<th style="text-align: center;">customerId</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+<p><code>Output:</code></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Customers</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Henry</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Max</td>
+</tr>
+</tbody>
+</table>
 <h2 id="解法一">解法一</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isPalindrome</span>(<span class="params">self, x: <span class="built_in">int</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        nums=<span class="built_in">list</span>(<span class="built_in">str</span>(x))</span><br><span class="line">        nums2=nums[-<span class="number">1</span>::-<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            <span class="keyword">if</span> nums[i]!=nums2[i]:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
-<p>一开始写的代码，充斥着幼稚啊。这里提两个点。
-&gt;第一，反转列表nums2其实没有必要。</p>
-<blockquote>
-<p>第二，循环次数过多了，其实循环一半就够了。</p>
-</blockquote>
-<p>那就在刚才说的基础上改一下吧。 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isPalindrome</span>(<span class="params">self, x: <span class="built_in">int</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        nums = <span class="built_in">list</span>(<span class="built_in">str</span>(x))</span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n // <span class="number">2</span>):</span><br><span class="line">            <span class="keyword">if</span> nums[i] != nums[n - i - <span class="number">1</span>]:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure></p>
-<p>这里，我们还可以借助leetcode0007的工具 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isPalindrome</span>(<span class="params">self, x: <span class="built_in">int</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">if</span> x &lt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">reverse</span>(<span class="params">x: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">            mxStr =  <span class="string">&#x27;2147483647&#x27;</span></span><br><span class="line">            ansLst = <span class="built_in">reversed</span>(<span class="built_in">str</span>(<span class="built_in">abs</span>(x)))</span><br><span class="line">            ansStr = <span class="string">&#x27;&#x27;</span>.join(ansLst).rjust(<span class="number">10</span>,<span class="string">&#x27;0&#x27;</span>)</span><br><span class="line">            <span class="keyword">if</span> ansStr &gt; mxStr: <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">int</span>(ansStr)*(<span class="number">1</span> - <span class="number">2</span>*(x &lt; <span class="number">0</span>)) </span><br><span class="line">        <span class="keyword">return</span> x==reverse(x)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">find_customers</span>(<span class="params">customers: pd.DataFrame, orders: pd.DataFrame</span>) -&gt; pd.DataFrame:</span><br><span class="line">    out=customers.merge(right=orders, how=<span class="string">&#x27;left&#x27;</span>, left_on=<span class="string">&#x27;id&#x27;</span>, right_on=<span class="string">&#x27;customerId&#x27;</span>)</span><br><span class="line">    out=out[out[<span class="string">&#x27;id_y&#x27;</span>].isna()][[<span class="string">&#x27;name&#x27;</span>]]</span><br><span class="line">    <span class="comment">#out.rename(columns=&#123;&#x27;name&#x27;:&#x27;Customers&#x27;&#125;)</span></span><br><span class="line">    <span class="keyword">return</span> out.rename(columns=&#123;<span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;Customers&#x27;</span>&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="解法二">解法二</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">find_customers</span>(<span class="params">customers: pd.DataFrame, order: pd.DataFrame</span>) -&gt; pd.DataFrame:</span><br><span class="line">    order_customer_ids = order[<span class="string">&#x27;customerId&#x27;</span>].unique()</span><br><span class="line">    out=customers[~customers[<span class="string">&#x27;id&#x27;</span>].isin(order_customer_ids)][[<span class="string">&#x27;name&#x27;</span>]]</span><br><span class="line">    <span class="keyword">return</span> out.rename(columns=&#123;<span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;Customers&#x27;</span>&#125;)</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -263,7 +350,7 @@ Palindromic Substring</a> 的人就已经会做这题了。</p>
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://yun-iota.vercel.app/2023/07/04/leetcode0009/" title="leetcode0009">https://yun-iota.vercel.app/2023/07/04/leetcode0009/</a>
+      <a href="https://yun-iota.vercel.app/2023/08/31/leetcode0183/" title="leetcode0183">https://yun-iota.vercel.app/2023/08/31/leetcode0183/</a>
   </li>
   <li class="post-copyright-license">
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -274,19 +361,20 @@ Palindromic Substring</a> 的人就已经会做这题了。</p>
           <div class="post-tags">
               <a href="/tags/leetcode/" rel="tag"># leetcode</a>
               <a href="/tags/python/" rel="tag"># python</a>
+              <a href="/tags/pandas/" rel="tag"># pandas</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/07/03/leetcode0008/" rel="prev" title="leetcode0008">
+                <a href="/2023/08/29/leetcode0058/" rel="prev" title="leetcode0008">
                   <i class="fa fa-angle-left"></i> leetcode0008
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/07/04/leetcode0010/" rel="next" title="leetcode0010">
-                  leetcode0010 <i class="fa fa-angle-right"></i>
+                <a href="/2023/08/31/leetcode0196/" rel="next" title="leetcode0196">
+                  leetcode0196 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>

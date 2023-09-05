@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yun-iota.vercel.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":true,"height":100},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="这是来自leetcode上的一个课程，8月份的时候，可以免费学习。 因为这些题目其实都是比较简单的，因此我就一次性汇总在这个帖子里。 Data Filtering Big Countries">
+<meta property="og:type" content="article">
+<meta property="og:title" content="30 Days of Pandas">
+<meta property="og:url" content="https://yun-iota.vercel.app/2023/09/05/pandas/index.html">
+<meta property="og:site_name" content="无崖子">
+<meta property="og:description" content="这是来自leetcode上的一个课程，8月份的时候，可以免费学习。 因为这些题目其实都是比较简单的，因此我就一次性汇总在这个帖子里。 Data Filtering Big Countries">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-09-05T08:29:04.000Z">
+<meta property="article:modified_time" content="2023-09-05T11:40:30.698Z">
+<meta property="article:author" content="yun">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://yun-iota.vercel.app/2023/09/05/pandas/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://yun-iota.vercel.app/2023/09/05/pandas/","path":"2023/09/05/pandas/","title":"30 Days of Pandas"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>30 Days of Pandas | 无崖子</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">无崖子</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#data-filtering"><span class="nav-number">1.</span> <span class="nav-text">Data Filtering</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#string-methods"><span class="nav-number">2.</span> <span class="nav-text">String Methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#strengthen-your-learning-by-solving-this-question"><span class="nav-number">3.</span> <span class="nav-text">Strengthen
+Your Learning by Solving this Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#data-manipulation"><span class="nav-number">4.</span> <span class="nav-text">Data Manipulation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#statistics"><span class="nav-number">5.</span> <span class="nav-text">Statistics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#strengthen-your-learning-by-solving-this-question-1"><span class="nav-number">6.</span> <span class="nav-text">Strengthen
+Your Learning by Solving this Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#data-aggregation"><span class="nav-number">7.</span> <span class="nav-text">Data Aggregation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#data-integration"><span class="nav-number">8.</span> <span class="nav-text">Data Integration</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#strengthen-your-learning-by-solving-this-question-2"><span class="nav-number">9.</span> <span class="nav-text">Strengthen
+Your Learning by Solving this Question</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">yun</p>
+  <div class="site-description" itemprop="description">吾生也有涯，而知也无涯。 以有涯随无涯，殆已！</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://yun-iota.vercel.app/2023/09/05/pandas/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="yun">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="无崖子">
+      <meta itemprop="description" content="吾生也有涯，而知也无涯。 以有涯随无涯，殆已！">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="30 Days of Pandas | 无崖子">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          30 Days of Pandas
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-09-05 16:29:04" itemprop="dateCreated datePublished" datetime="2023-09-05T16:29:04+08:00">2023-09-05</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>这是来自leetcode上的一个课程，8月份的时候，可以免费学习。
+因为这些题目其实都是比较简单的，因此我就一次性汇总在这个帖子里。</p>
+<h2 id="data-filtering">Data Filtering</h2>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/big-countries/editorial/?envType=study-plan-v2&amp;envId=30-days-of-pandas&amp;lang=pythondata">Big
+Countries</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">big_countries</span>(<span class="params">world: pd.DataFrame</span>) -&gt; pd.DataFrame:</span><br><span class="line">    merged_df = world[(world[<span class="string">&#x27;area&#x27;</span>] &gt;= <span class="number">3000000</span>) &amp; (world[<span class="string">&#x27;population&#x27;</span>] &gt;= <span class="number">25000000</span>)]</span><br><span class="line">    merged_df = merged_df.drop_duplicates().drop([<span class="string">&#x27;continent&#x27;</span>, <span class="string">&#x27;gdp&#x27;</span>], axis=<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> merged_df</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/recyclable-and-low-fat-products/editorial/?envType=study-plan-v2&amp;envId=30-days-of-pandas&amp;lang=pythondata">Recyclable
+and Low Fat Products</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">find_products</span>(<span class="params">products: pd.DataFrame</span>) -&gt; pd.DataFrame:</span><br><span class="line">    <span class="keyword">return</span> products[(products[<span class="string">&#x27;low_fats&#x27;</span>]==<span class="string">&#x27;Y&#x27;</span>) &amp; (products[<span class="string">&#x27;recyclable&#x27;</span>]==<span class="string">&#x27;Y&#x27;</span>)].loc[:, [<span class="string">&#x27;product_id&#x27;</span>]]</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/customers-who-never-order/editorial/?envType=study-plan-v2&amp;envId=30-days-of-pandas&amp;lang=pythondata">Customers
+Who Never Order</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">find_customers</span>(<span class="params">customers: pd.DataFrame, orders: pd.DataFrame</span>) -&gt; pd.DataFrame:</span><br><span class="line">    filtered_df = customers[~customers[<span class="string">&#x27;id&#x27;</span>].isin(orders[<span class="string">&#x27;customerId&#x27;</span>])]</span><br><span class="line">    data = &#123;</span><br><span class="line">        <span class="string">&#x27;Customers&#x27;</span>:filtered_df[<span class="string">&#x27;name&#x27;</span>]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> pd.DataFrame(data)</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/article-views-i/editorial/?envType=study-plan-v2&amp;envId=30-days-of-pandas&amp;lang=pythondata">Article
+Views I</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">article_views</span>(<span class="params">views: pd.DataFrame</span>) -&gt; pd.DataFrame:</span><br><span class="line">    out_id=views[views[<span class="string">&#x27;author_id&#x27;</span>]==views[<span class="string">&#x27;viewer_id&#x27;</span>]][[<span class="string">&#x27;viewer_id&#x27;</span>]].drop_duplicates()</span><br><span class="line">    out_id=out_id.rename(columns=&#123;<span class="string">&#x27;viewer_id&#x27;</span>:<span class="string">&#x27;id&#x27;</span>&#125;).sort_values(by=<span class="string">&#x27;id&#x27;</span>, ascending=<span class="literal">True</span>)</span><br><span class="line">    <span class="keyword">return</span> out_id</span><br></pre></td></tr></table></figure>
+<h2 id="string-methods">String Methods</h2>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/invalid-tweets/editorial/?envType=study-plan-v2&amp;envId=30-days-of-pandas&amp;lang=pythondata">Invalid
+Tweets</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">invalid_tweets</span>(<span class="params">tweets: pd.DataFrame</span>) -&gt; pd.DataFrame:</span><br><span class="line">    <span class="keyword">return</span> tweets[tweets[<span class="string">&#x27;content&#x27;</span>].<span class="built_in">str</span>.<span class="built_in">len</span>()  &gt; <span class="number">15</span>][[<span class="string">&#x27;tweet_id&#x27;</span>]]</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/calculate-special-bonus/editorial/?envType=study-plan-v2&amp;envId=30-days-of-pandas&amp;lang=pythondata">Calculate
+Special Bonus</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">calculate_special_bonus</span>(<span class="params">employees: pd.DataFrame</span>) -&gt; pd.DataFrame:</span><br><span class="line">    bonus_indicator=(employees[<span class="string">&#x27;employee_id&#x27;</span>]%<span class="number">2</span>==<span class="number">1</span>) &amp; (~employees[<span class="string">&#x27;name&#x27;</span>].<span class="built_in">str</span>.startswith(<span class="string">&#x27;M&#x27;</span>))</span><br><span class="line">    employees[<span class="string">&#x27;bonus&#x27;</span>] = employees[<span class="string">&#x27;salary&#x27;</span>].where(bonus_indicator, <span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span> employees[[<span class="string">&#x27;employee_id&#x27;</span>, <span class="string">&#x27;bonus&#x27;</span>]].sort_values(by=<span class="string">&#x27;employee_id&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/fix-names-in-a-table/editorial/?envType=study-plan-v2&amp;envId=30-days-of-pandas&amp;lang=pythondata">Fix
+Names in a Table</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fix_names</span>(<span class="params">users: pd.DataFrame</span>) -&gt; pd.DataFrame:</span><br><span class="line">    users[<span class="string">&#x27;name&#x27;</span>]=users[<span class="string">&#x27;name&#x27;</span>].apply(<span class="keyword">lambda</span> name: name.capitalize())</span><br><span class="line">    <span class="keyword">return</span> users.sort_values(by=<span class="string">&#x27;user_id&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/find-users-with-valid-e-mails/editorial/?envType=study-plan-v2&amp;envId=30-days-of-pandas&amp;lang=pythondata">Find
+Users With Valid E-Mails</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">valid_emails</span>(<span class="params">users: pd.DataFrame</span>) -&gt; pd.DataFrame:</span><br><span class="line">    pattern = <span class="string">&#x27;^[a-zA-Z0-9-_.@]*$&#x27;</span></span><br><span class="line">    output=users[(users[<span class="string">&#x27;mail&#x27;</span>].<span class="built_in">str</span>.contains(pattern))&amp;(users[<span class="string">&#x27;mail&#x27;</span>].<span class="built_in">str</span>.<span class="keyword">match</span>(<span class="string">&#x27;^[a-zA-Z]&#x27;</span>))&amp;(users[<span class="string">&#x27;mail&#x27;</span>].<span class="built_in">str</span>.endswith(<span class="string">&#x27;@leetcode.com&#x27;</span>)) &amp; (users[<span class="string">&#x27;mail&#x27;</span>].<span class="built_in">str</span>.count(<span class="string">&#x27;@&#x27;</span>) == <span class="number">1</span>)]</span><br><span class="line">    <span class="keyword">return</span> output</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/patients-with-a-condition/editorial/?envType=study-plan-v2&amp;envId=30-days-of-pandas&amp;lang=pythondata">Patients
+With a Condition</a></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> find_patients(patients: pd.DataFrame) <span class="op">-&gt;</span> pd.DataFrame:</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> patients[patients[<span class="st">&#39;conditions&#39;</span>].<span class="bu">str</span>.startswith(<span class="st">&#39;DIAB1&#39;</span>) <span class="op">|</span> patients[<span class="st">&#39;conditions&#39;</span>].<span class="bu">str</span>.contains(<span class="st">&#39; DIAB1&#39;</span>)]</span></code></pre></div>
+<h2 id="strengthen-your-learning-by-solving-this-question">Strengthen
+Your Learning by Solving this Question</h2>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/count-occurrences-in-text/?envType=study-plan-v2&amp;envId=30-days-of-pandas&amp;lang=pythondata">Count
+Occurrences in Text</a></p>
+<h2 id="data-manipulation">Data Manipulation</h2>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/nth-highest-salary/editorial/?envType=study-plan-v2&amp;envId=30-days-of-pandas&amp;lang=pythondata">Nth
+Highest Salary</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/second-highest-salary/editorial/?envType=study-plan-v2&amp;envId=30-days-of-pandas&amp;lang=pythondata">Second
+Highest Salary</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/department-highest-salary/editorial/?envType=study-plan-v2&amp;envId=30-days-of-pandas&amp;lang=pythondata">Department
+Highest Salary</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/rank-scores/editorial/?envType=study-plan-v2&amp;envId=30-days-of-pandas&amp;lang=pythondata">Rank
+Scores</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/delete-duplicate-emails/editorial/?envType=study-plan-v2&amp;envId=30-days-of-pandas&amp;lang=pythondata">Delete
+Duplicate Emails</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/rearrange-products-table/editorial/?envType=study-plan-v2&amp;envId=30-days-of-pandas&amp;lang=pythondata">Rearrange
+Products Table</a></p>
+<h2 id="statistics">Statistics</h2>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/the-number-of-rich-customers/editorial/?envType=study-plan-v2&amp;envId=30-days-of-pandas&amp;lang=pythondata">The
+Number of Rich Customers</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/immediate-food-delivery-i/editorial/?envType=study-plan-v2&amp;envId=30-days-of-pandas&amp;lang=pythondata">Immediate
+Food Delivery I</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/count-salary-categories/editorial/?envType=study-plan-v2&amp;envId=30-days-of-pandas&amp;lang=pythondata">Count
+Salary Categories</a></p>
+<h2 id="strengthen-your-learning-by-solving-this-question-1">Strengthen
+Your Learning by Solving this Question</h2>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/ads-performance/?envType=study-plan-v2&amp;envId=30-days-of-pandas&amp;lang=pythondata">Ads
+Performance</a></p>
+<h2 id="data-aggregation">Data Aggregation</h2>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/find-total-time-spent-by-each-employee/editorial/?envType=study-plan-v2&amp;envId=30-days-of-pandas&amp;lang=pythondata">Find
+Total Time Spent by Each Employee</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/game-play-analysis-i/editorial/?envType=study-plan-v2&amp;envId=30-days-of-pandas&amp;lang=pythondata">Game
+Play Analysis I</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/number-of-unique-subjects-taught-by-each-teacher/editorial/?envType=study-plan-v2&amp;envId=30-days-of-pandas&amp;lang=pythondata">Number
+of Unique Subjects Taught by Each Teacher</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/classes-more-than-5-students/editorial/?envType=study-plan-v2&amp;envId=30-days-of-pandas&amp;lang=pythondata">Classes
+More Than 5 Student</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/customer-placing-the-largest-number-of-orders/editorial/?envType=study-plan-v2&amp;envId=30-days-of-pandas&amp;lang=pythondata">Customer
+Placing the Largest Number of Orders</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/group-sold-products-by-the-date/editorial/?envType=study-plan-v2&amp;envId=30-days-of-pandas&amp;lang=pythondata">Group
+Sold Products By The Date</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/daily-leads-and-partners/editorial/?envType=study-plan-v2&amp;envId=30-days-of-pandas&amp;lang=pythondata">Daily
+Leads and Partners</a></p>
+<h2 id="data-integration">Data Integration</h2>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/actors-and-directors-who-cooperated-at-least-three-times/editorial/?envType=study-plan-v2&amp;envId=30-days-of-pandas&amp;lang=pythondata">Actors
+and Directors Who Cooperated At Least Three Times</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/replace-employee-id-with-the-unique-identifier/editorial/?envType=study-plan-v2&amp;envId=30-days-of-pandas&amp;lang=pythondata">Replace
+Employee ID With The Unique Identifier</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/students-and-examinations/editorial/?envType=study-plan-v2&amp;envId=30-days-of-pandas&amp;lang=pythondata">Students
+and Examinations</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/managers-with-at-least-5-direct-reports/editorial/?envType=study-plan-v2&amp;envId=30-days-of-pandas&amp;lang=pythondata">Managers
+with at Least 5 Direct Reports</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/sales-person/editorial/?envType=study-plan-v2&amp;envId=30-days-of-pandas&amp;lang=pythondata">Sales
+Person</a></p>
+<h2 id="strengthen-your-learning-by-solving-this-question-2">Strengthen
+Your Learning by Solving this Question</h2>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/accepted-candidates-from-the-interviews/?envType=study-plan-v2&amp;envId=30-days-of-pandas&amp;lang=pythondata">Accepted
+Candidates From the Interviews</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>yun
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://yun-iota.vercel.app/2023/09/05/pandas/" title="30 Days of Pandas">https://yun-iota.vercel.app/2023/09/05/pandas/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/09/05/leetcode0242/" rel="prev" title="leetcode0242">
+                  <i class="fa fa-angle-left"></i> leetcode0242
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">yun</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
